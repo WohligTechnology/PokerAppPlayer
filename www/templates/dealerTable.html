@@ -1,0 +1,88 @@
+<ion-view view-title="Dealer">
+    <ion-content class="bgImg">
+      <div class="centerDiv">
+        <div class="row mar5 " ng-repeat= 'player in players track by $index' ng-init="a1=$index" >
+          <div class="col-25 col-sm-25 " ng-repeat= 'p in player.p track by $index' ng-init="a=a1+'-'+$index">
+            <div class="players text-center"  ng-class="{'selected' : (a==selected)} ">{{a}}
+              <div class="playerimg">
+              <img class="img-responsive" src="img/person.png" alt="">
+              </div>
+              <h2>{{p.player}}</h2>
+            </div>
+          </div>
+           </div>
+           <div class="rel" >
+            <div class="row text-center">
+                 <div class="col-20" ng-show="show3cards">
+                    <div class="cardimg " >
+                        <img class="img-responsive" src="img/q.png" alt="">
+                    </div>
+                 </div>
+                    <div class="col-20" ng-show="!show3cards">
+                      <div class="cardimg">
+                          <img class="img-responsive" src="img/download.jpeg" alt="">
+                       </div>
+                     </div>
+                   <div class="col-20" ng-show="show3cards">
+                      <div class="cardimg" >
+                         <img class="img-responsive" src="img/a.png" alt="">
+                       </div>
+                    </div>
+                    <div class="col-20 " ng-show="!show3cards">
+                      <div class="cardimg ">
+                          <img class="img-responsive" src="img/download.jpeg" alt="">
+                      </div>
+                    </div>
+                    <div class="col-20" ng-show="show3cards">
+                        <div class="cardimg">
+                            <img class="img-responsive" src="img/q.png" alt="">
+                        </div>
+                    </div>
+                     <div class="col-20 " ng-show="!show3cards">
+                          <div class="cardimg ">
+                              <img class="img-responsive" src="img/download.jpeg" alt="">
+                          </div>
+                    </div>
+                    <div class="col-20" ng-show="show2cards">
+                        <div class="cardimg" >
+                            <img class="img-responsive" src="img/a.png" alt="">
+                        </div>
+                    </div>
+                    <div class="col-20 " ng-show="!show2cards">
+                            <div class="cardimg ">
+                                <img class="img-responsive" src="img/download.jpeg" alt="">
+                            </div>
+                      </div>
+                    <div class="col-20" ng-show="show2cards">
+                        <div class="cardimg">
+                            <img class="img-responsive" src="img/q.png" alt="">
+                        </div>
+                    </div>
+                    <div class="col-20 " ng-show="!show2cards">
+                            <div class="cardimg ">
+                                <img class="img-responsive" src="img/download.jpeg" alt="">
+                            </div>
+                      </div>
+                    <div class="cardbtn card1-top" ng-click="show3cards=true" ng-show="!show3cards">
+                <button class="button back-color" >Show</button>
+              </div>
+              <div class=" cardbtn card2-top" ng-click="show2cards=true" ng-show="!show2cards">
+                    <button class="button back-color" >Show</button>
+                  </div>
+            </div>
+        </div>
+        <div class="row">
+           <div class="col-50 text-center" ng-click='move($index)'>
+              <button class="button btn-start">Move</button>
+           </div>
+          <div class="col-50 text-center">
+            <button class="button btn-start">Fold</button>
+          </div>
+        </div>
+        <div class="text-center">
+          <button class="button btn-start">Show</button>
+        </div>
+      </div>
+    </ion-content>
+  </ion-view>
+  

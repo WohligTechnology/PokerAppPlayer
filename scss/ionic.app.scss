@@ -1,0 +1,278 @@
+/*
+To customize the look and feel of Ionic, you can override the variables
+in ionic's _variables.scss file.
+
+For example, you might change some of the default colors:
+
+$light:                           #fff !default;
+$stable:                          #f8f8f8 !default;
+$positive:                        #387ef5 !default;
+$calm:                            #11c1f3 !default;
+$balanced:                        #33cd5f !default;
+$energized:                       #ffc900 !default;
+$assertive:                       #ef473a !default;
+$royal:                           #886aea !default;
+$dark:                            #444 !default;
+*/
+
+// The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+
+// Include all of Ionic
+@import "www/lib/ionic/scss/ionic";
+
+.bgImg {
+    background-image: url(../img/bg-added.jpg);
+    width: auto;
+    height: auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center right;
+}
+
+.mar5 {
+    margin-top: 5%;
+}
+
+.centerDiv {
+    height: 100vh;
+    position: relative;
+}
+
+.centerRow {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+}
+
+.buttonpos {
+    position: absolute;
+    bottom: 1%;
+    right: 1%;
+    button {
+        background: transparent!important;
+    }
+    i {
+        font-size: 40px;
+        color: red;
+    }
+}
+
+.cardimg1 {
+    width: 80%;
+    margin: 0 auto;
+    img {
+        width: 100%;
+    }
+}
+
+.cardimg {
+    margin: 30% auto;
+    width: 60%;
+    img{
+        width: 100%;
+    }
+}
+
+.table-border {
+    border: 3px solid #fff;
+    height: 180px;
+    width: 180px;
+    margin: 10px auto;
+    background-color: transparent;
+    display: table;
+}
+
+.dis-cell {
+    display: table-cell;
+    vertical-align: middle;
+    h2 {
+        text-align: center;
+        color: #fff !important;
+    }
+    &:hover {
+        background-color: red;
+    }
+    &:active {
+        background-color: red;
+    }
+    &:focus {
+        background-color: red;
+    }
+}
+
+.mar-t {
+    margin-top: 20%;
+}
+
+.btn-start {
+    font-size: 30px;
+    padding: 10px 30px;
+    margin-top: 30px;
+}
+
+.removedpopup {
+    h3 {
+        img {
+            max-width: 35px;
+            max-height: 35px;
+            font-size: 30px!important;
+        }
+    }
+    .popup-title {
+        font-size: 30px;
+        padding: 20px 20px!important;
+    }
+    .popup {
+        border-radius: 5px;
+        width: 600px;
+    }
+    .popup-body {
+        background: white;
+        color: #223c4d;
+        text-align: center;
+        font-weight: 600;
+        padding: 30px 30px;
+        font-size: 30px;
+        h4 {
+            margin: 0;
+            font-size: 250px;
+            color: #223c4d;
+            font-weight: 600;
+        }
+        label {
+            font-size: 25px;
+        }
+    }
+    .popup-head {
+        padding-top: 20px;
+        padding-bottom: 0;
+        border-bottom: none!important;
+        text-align: center;
+        background: white;
+        border-radius: 5px;
+        font-size: 30px!important;
+    }
+    .popup-buttons {
+        padding: 0;
+        min-height: 40px;
+        background: cornflowerblue!important;
+        border: none;
+        font-size: 30px;
+        button {
+            border: none;
+            min-height: 60px;
+            font-size: 25px;
+            background: cornflowerblue!important;
+        }
+    }
+}
+
+.leaveApp {
+    h3 {
+        img {
+            max-width: 35px;
+            max-height: 35px;
+        }
+    }
+    .popup {
+        border-radius: 5px;
+    }
+    .popup-body {
+        background: white;
+        color: #223c4d;
+        text-align: center;
+        font-weight: 600;
+        padding-bottom: 30px;
+        font-size: 14px;
+        h4 {
+            margin: 0;
+            font-size: 25px;
+            color: #223c4d;
+            font-weight: 600;
+        }
+        label {
+            font-size: 12px;
+        }
+    }
+    .popup-head {
+        padding-top: 30px;
+        padding-bottom: 0;
+        border-bottom: none!important;
+        text-align: center;
+        background: white;
+        border-radius: 5px;
+    }
+    .popup-buttons {
+        padding: 0;
+        min-height: 40px;
+        background: white;
+        border: none;
+        button {
+            border: none;
+            min-height: 35px;
+            font-size: 12px;
+        }
+    }
+}
+
+.players {
+    margin: 10px;
+    img {
+        border: 3px solid white;
+    }
+    h2 {
+        color: white;
+        margin-bottom: 20px!important;
+    }
+}
+
+.playerimg {
+    width: 60%;
+}
+
+.selected {
+    border: 3px solid orangered;
+}
+
+.playerimg {
+    width: 100%;
+    img {
+        width: 60%;
+    }
+    h1 {
+        color: white;
+        margin-bottom: 20px!important;
+    }
+}
+
+.dummydiv{
+    height: 400px;
+}
+
+.rel{
+    position: relative;
+}
+.cardbtn{
+    position: absolute;
+    
+    transform: translate(-50%,-50%);
+    button{
+        font-size: 30px;
+        padding: 10px 30px;
+        margin-top: 30px;
+        width: 100%;
+    }
+}
+.card1-top{
+    top: 44%;
+    left: 30%;
+}
+.card2-top{
+    top: 44%;
+    right: 2%;
+}
+.back-color{
+    background-color: rgba(248, 248, 248, 0.7) !important;
+}
