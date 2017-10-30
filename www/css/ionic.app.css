@@ -9917,18 +9917,21 @@ a.button {
 
 .table-border {
   border: 3px solid #fff;
-  height: 180px;
-  width: 180px;
   margin: 10px auto;
   background-color: transparent;
   display: table; }
+
+.platform-ipad .table-border {
+  height: 180px;
+  width: 180px; }
 
 .dis-cell {
   display: table-cell;
   vertical-align: middle; }
   .dis-cell h2 {
     text-align: center;
-    color: #fff !important; }
+    color: #fff !important;
+    font-size: 25px !important; }
   .dis-cell:hover {
     background-color: red; }
   .dis-cell:active {
@@ -9940,9 +9943,13 @@ a.button {
   margin-top: 20%; }
 
 .btn-start {
-  font-size: 30px;
-  padding: 10px 30px;
+  font-size: 25px;
+  padding: 0px 20px;
   margin-top: 30px; }
+
+.platform-ipad .btn-start {
+  padding: 10px 30px;
+  font-size: 30px; }
 
 .removedpopup h3 img {
   max-width: 35px;
@@ -10033,13 +10040,18 @@ a.button {
     min-height: 35px;
     font-size: 12px; }
 
-.players {
+.players img {
+  border: 3px solid white; }
+
+.players h2 {
+  color: white;
+  margin-bottom: 20px !important;
+  font-size: 20px; }
+
+.platform-ipad .players {
   margin: 10px; }
-  .players img {
-    border: 3px solid white; }
-  .players h2 {
-    color: white;
-    margin-bottom: 20px !important; }
+  .platform-ipad .players h2 {
+    font-size: 30px; }
 
 .playerimg {
   width: 60%; }
@@ -10056,25 +10068,53 @@ a.button {
     margin-bottom: 20px !important; }
 
 .dummydiv {
-  height: 400px; }
+  height: 10px; }
 
 .rel {
   position: relative; }
+
+.playerfold {
+  color: white;
+  position: absolute;
+  background: rgba(128, 128, 128, 0.71);
+  transform: translate(-50%, -50%);
+  top: 35%;
+  left: 50%;
+  font-size: 20px; }
+
+.platform-ipad .playerfold {
+  font-size: 26px;
+  padding: 10px 20px;
+  top: 40%; }
 
 .cardbtn {
   position: absolute;
   transform: translate(-50%, -50%); }
   .cardbtn button {
-    font-size: 30px;
-    padding: 10px 30px;
+    font-size: 20px;
+    padding: 0px 20px;
     margin-top: 30px;
     width: 100%; }
 
+.platform-ipad .cardbtn button {
+  font-size: 30px;
+  padding: 10px 30px;
+  margin-top: 30px;
+  width: 100%; }
+
 .card1-top {
+  top: 36%;
+  left: 30%; }
+
+.platform-ipad .card1-top {
   top: 44%;
   left: 30%; }
 
 .card2-top {
+  top: 36%;
+  left: 80%; }
+
+.platform-ipad .card2-top {
   top: 44%;
   right: 2%; }
 

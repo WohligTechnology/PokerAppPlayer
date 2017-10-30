@@ -2,7 +2,8 @@
     <ion-content class="bgImg">
       <div class="centerDiv">
         <div class="row mar5 " ng-repeat= 'player in players track by $index' ng-init="a1=$index" >
-          <div class="col-25 col-sm-25 " ng-repeat= 'p in player.p track by $index' ng-init="a=a1+'-'+$index">
+          <div class="col-25 col-sm-25 rel" ng-repeat= 'p in player.p track by $index' ng-init="a=a1+'-'+$index">
+              <label class="playerfold" for="">Fold</label>
             <div class="players text-center"  ng-class="{'selected' : (a==selected)} ">{{a}}
               <div class="playerimg">
               <img class="img-responsive" src="img/person.png" alt="">
