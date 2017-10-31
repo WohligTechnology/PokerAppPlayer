@@ -9894,9 +9894,7 @@ a.button {
   left: 50%; }
 
 .buttonpos {
-  position: absolute;
-  bottom: 1%;
-  right: 1%; }
+  margin: 20px 45px; }
   .buttonpos button {
     background: transparent !important; }
   .buttonpos i {
@@ -9919,7 +9917,23 @@ a.button {
   border: 3px solid #fff;
   margin: 10px auto;
   background-color: transparent;
-  display: table; }
+  display: table;
+  width: 100%;
+  height: 200px; }
+
+.platform-android .table-border {
+  border: 3px solid #fff;
+  height: 100px;
+  margin: 10px auto !important;
+  background-color: transparent !important;
+  display: table !important; }
+
+.platform-ios .table-border {
+  border: 3px solid #fff;
+  height: 100px;
+  margin: 10px auto !important;
+  background-color: transparent !important;
+  display: table !important; }
 
 .platform-ipad .table-border {
   height: 180px;
@@ -9932,12 +9946,12 @@ a.button {
     text-align: center;
     color: #fff !important;
     font-size: 25px !important; }
-  .dis-cell:hover {
-    background-color: red; }
-  .dis-cell:active {
-    background-color: red; }
-  .dis-cell:focus {
-    background-color: red; }
+
+.platform-ios .dis-cell h2 {
+  font-size: 20px !important; }
+
+.platform-android .dis-cell h2 {
+  font-size: 20px !important; }
 
 .mar-t {
   margin-top: 20%; }
@@ -9954,32 +9968,81 @@ a.button {
 .removedpopup h3 img {
   max-width: 35px;
   max-height: 35px;
-  font-size: 30px !important; }
+  font-size: 20px !important; }
 
 .removedpopup .popup-title {
-  font-size: 30px;
-  padding: 20px 20px !important; }
+  font-size: 20px;
+  padding: 0px 0px !important; }
 
 .removedpopup .popup {
   border-radius: 5px;
-  width: 600px; }
+  width: 250px; }
 
 .removedpopup .popup-body {
   background: white;
   color: #223c4d;
   text-align: center;
   font-weight: 600;
+  padding: 10px 10px;
+  font-size: 20px; }
+  .removedpopup .popup-body h4 {
+    margin: 0;
+    font-size: 20px;
+    color: #223c4d;
+    font-weight: 600; }
+  .removedpopup .popup-body label {
+    font-size: 20px; }
+
+.removedpopup .popup-head {
+  padding-top: 10px;
+  padding-bottom: 0;
+  border-bottom: none !important;
+  text-align: center;
+  background: white;
+  border-radius: 5px;
+  font-size: 20px !important; }
+
+.removedpopup .popup-buttons {
+  padding: 0;
+  min-height: 20px;
+  background: cornflowerblue !important;
+  border: none;
+  font-size: 20px; }
+  .removedpopup .popup-buttons button {
+    border: none;
+    min-height: 40px;
+    font-size: 20px;
+    background: cornflowerblue !important; }
+
+.platform-ipad .removedpopup h3 img {
+  max-width: 35px;
+  max-height: 35px;
+  font-size: 30px !important; }
+
+.platform-ipad .removedpopup .popup-title {
+  font-size: 30px;
+  padding: 20px 20px !important; }
+
+.platform-ipad .removedpopup .popup {
+  border-radius: 5px;
+  width: 600px; }
+
+.platform-ipad .removedpopup .popup-body {
+  background: white;
+  color: #223c4d;
+  text-align: center;
+  font-weight: 600;
   padding: 30px 30px;
   font-size: 30px; }
-  .removedpopup .popup-body h4 {
+  .platform-ipad .removedpopup .popup-body h4 {
     margin: 0;
     font-size: 250px;
     color: #223c4d;
     font-weight: 600; }
-  .removedpopup .popup-body label {
+  .platform-ipad .removedpopup .popup-body label {
     font-size: 25px; }
 
-.removedpopup .popup-head {
+.platform-ipad .removedpopup .popup-head {
   padding-top: 20px;
   padding-bottom: 0;
   border-bottom: none !important;
@@ -9988,13 +10051,13 @@ a.button {
   border-radius: 5px;
   font-size: 30px !important; }
 
-.removedpopup .popup-buttons {
+.platform-ipad .removedpopup .popup-buttons {
   padding: 0;
   min-height: 40px;
   background: cornflowerblue !important;
   border: none;
   font-size: 30px; }
-  .removedpopup .popup-buttons button {
+  .platform-ipad .removedpopup .popup-buttons button {
     border: none;
     min-height: 60px;
     font-size: 25px;
@@ -10120,3 +10183,45 @@ a.button {
 
 .back-color {
   background-color: rgba(248, 248, 248, 0.7) !important; }
+
+.backgroundcl {
+  background: red; }
+
+.platform-ipad .player-select {
+  width: 50%;
+  display: block;
+  margin: 20px 45px; }
+  .platform-ipad .player-select .input-label {
+    font-size: 24px !important;
+    color: white !important; }
+  .platform-ipad .player-select .item {
+    background-color: transparent !important;
+    color: white !important;
+    font-size: 16px !important; }
+  .platform-ipad .player-select .item-select select {
+    font-size: 24px !important; }
+
+.player-select {
+  width: 60%;
+  display: block;
+  margin: 20px 45px; }
+  .player-select .input-label {
+    font-size: 16px !important;
+    color: white !important; }
+  .player-select .item {
+    background-color: transparent !important;
+    color: white !important;
+    font-size: 16px !important; }
+  .player-select .item-select select {
+    font-size: 16px !important;
+    border-radius: 0px !important;
+    direction: ltr !important; }
+
+@media only screen and (max-width: 800px) and (min-width: 1280px) {
+  .table-border {
+    border: 3px solid #fff;
+    margin: 10px auto;
+    background-color: transparent;
+    display: table;
+    width: 100%;
+    height: 200px; } }

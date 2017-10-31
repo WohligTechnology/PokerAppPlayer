@@ -45,9 +45,12 @@ $dark:                            #444 !default;
     }
     
     .buttonpos {
-        position: absolute;
-        bottom: 1%;
-        right: 1%;
+        // position: absolute;
+        // bottom: 1%;
+        // right: 1%;
+        // width: 50%;
+        // display: block;
+        margin: 20px 45px;
         button {
             background: transparent!important;
         }
@@ -72,14 +75,31 @@ $dark:                            #444 !default;
             width: 100%;
         }
     }
-    
-    .table-border {
+   .table-border {
         border: 3px solid #fff;
         // height: 180px;
         // width: 180px;
         margin: 10px auto;
         background-color: transparent;
         display: table;
+        width: 100%;
+        height: 200px;
+    }
+    
+    .platform-android .table-border {
+        border: 3px solid #fff;
+        height: 100px;
+        margin: 10px auto!important;
+        background-color: transparent!important;
+        display: table!important;
+    }
+
+  .platform-ios .table-border {
+        border: 3px solid #fff;
+        height: 100px;
+        margin: 10px auto!important;
+        background-color: transparent!important;
+        display: table!important;
     }
     
     .platform-ipad  .table-border {
@@ -95,17 +115,27 @@ $dark:                            #444 !default;
             color: #fff !important;
             font-size: 25px!important;
         }
-        &:hover {
-            background-color: red;
-        }
-        &:active {
-            background-color: red;
-        }
-        &:focus {
-            background-color: red;
+        // &:hover {
+        //     background-color: red;
+        // }
+        // &:active {
+        //     background-color: red;
+        // }
+        // &:focus {
+        //     background-color: red;
+        // }
+    }
+    .platform-ios .dis-cell{
+        h2{
+            font-size: 20px!important;
         }
     }
-    
+
+    .platform-android .dis-cell{
+        h2{
+            font-size: 20px!important;
+        }
+    }
     .mar-t {
         margin-top: 20%;
     }
@@ -122,8 +152,65 @@ $dark:                            #444 !default;
         padding: 10px 30px;
         font-size: 30px;
     }
-    
+
     .removedpopup {
+        h3 {
+            img {
+                max-width: 35px;
+                max-height: 35px;
+                font-size: 20px!important;
+            }
+        }
+        .popup-title {
+            font-size: 20px;
+            padding: 0px 0px!important;
+        }
+        .popup {
+            border-radius: 5px;
+            width: 250px;
+        }
+        .popup-body {
+            background: white;
+            color: #223c4d;
+            text-align: center;
+            font-weight: 600;
+            padding: 10px 10px;
+            font-size: 20px;
+            h4 {
+                margin: 0;
+                font-size: 20px;
+                color: #223c4d;
+                font-weight: 600;
+            }
+            label {
+                font-size: 20px;
+            }
+        }
+        .popup-head {
+            padding-top: 10px;
+            padding-bottom: 0;
+            border-bottom: none!important;
+            text-align: center;
+            background: white;
+            border-radius: 5px;
+            font-size: 20px!important;
+        }
+        .popup-buttons {
+            padding: 0;
+            min-height: 20px;
+            background: cornflowerblue!important;
+            border: none;
+            font-size: 20px;
+            button {
+                border: none;
+                min-height: 40px;
+                font-size: 20px;
+                background: cornflowerblue!important;
+            }
+        }
+    }
+    
+  .platform-ipad  .removedpopup {
         h3 {
             img {
                 max-width: 35px;
@@ -239,8 +326,6 @@ $dark:                            #444 !default;
         }
     }
 
-
-    
     .platform-ipad .players{
         margin: 10px;
         h2{
@@ -332,3 +417,57 @@ $dark:                            #444 !default;
     .back-color{
         background-color: rgba(248, 248, 248, 0.7) !important;
     }
+
+    .backgroundcl{
+        background: red;
+    }
+    .platform-ipad  .player-select{
+        width: 50%;
+        display: block;
+        margin: 20px 45px;
+        .input-label{
+            font-size: 24px!important;
+            color: white!important;
+        }
+        .item{
+            background-color: transparent!important;
+            color: white!important;
+            font-size: 16px!important;
+        }
+        .item-select select{
+            font-size: 24px!important;
+        }
+    }
+
+    .player-select{
+        width: 60%;
+        display: block;
+        margin: 20px 45px;
+        .input-label{
+            font-size: 16px!important;
+            color: white!important;
+        }
+        .item{
+            background-color: transparent!important;
+            color: white!important;
+            font-size: 16px!important;
+        }
+        .item-select select{
+            font-size: 16px!important;
+            border-radius: 0px!important;
+            direction: ltr!important;
+        }
+    }
+
+    @media only screen and (max-width:800px) and (min-width:1280px) {
+        .table-border {
+            border: 3px solid #fff;
+            // height: 180px;
+            // width: 180px;
+            margin: 10px auto;
+            background-color: transparent;
+            display: table;
+            width: 100%;
+            height: 200px;
+        }
+        }
