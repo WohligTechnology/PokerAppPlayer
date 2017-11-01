@@ -52,7 +52,7 @@ angular.module('starter.controllers', [])
   ];
 })
 
-.controller('dealerTableCtrl', function ($scope, $stateParams) {
+.controller('PlayerCtrl', function ($scope, $stateParams) {
   
       $scope.players = [{
   

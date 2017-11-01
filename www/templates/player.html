@@ -1,0 +1,81 @@
+<ion-view view-title="Home">
+    <ion-content class="bgImg" >
+        <div class="" >
+     
+    <div class="row text-center"  ng-click='youwin()'>
+        <div class="col-20 ">
+            <div class="cardimg ">
+                <img class="img-responsive" src="img/q.png" alt="">
+
+            </div>
+        </div>
+        <div class="col-20">
+            <div class="cardimg" >
+                <img class="img-responsive" src="img/a.png" alt="">
+            </div>
+        </div>
+        <div class="col-20" >
+                <div class="cardimg">
+                    <img class="img-responsive" src="img/q.png" alt="">
+    
+                </div>
+            </div>
+            <div class="col-20">
+                <div class="cardimg" >
+                    <img class="img-responsive" src="img/a.png" alt="">
+                </div>
+            </div>
+            <div class="col-20" >
+                <div class="cardimg">
+                    <img class="img-responsive" src="img/q.png" alt="">
+    
+                </div>
+            </div>
+    </div>
+            <div class="row text-center " >
+                <div class="col-50" ng-click='youlose()'>
+                    <div class="cardimg1">
+                        <img class="img-responsive" src="img/queen_of_diamonds2.png" alt="">
+
+                    </div>
+                </div>
+                <div class="col-50">
+                    <div class="cardimg1" ng-click='fold()'>
+                        <img class="img-responsive" src="img/7_of_clubs.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-50 text-center" >
+                   <button class="button btn-start">Move</button>
+                </div>
+                
+               <div class="col-50 text-center">
+                 <button class="button btn-start">Fold</button>
+               </div>
+             </div>
+            <div class="list player-select">
+                
+        <label class="item item-input item-select">
+                <div class="input-label">
+                 Dealer
+                </div>
+                <select ng-model="dealerPlayer" ng-change="makeDealer(dealerPlayer);">
+        
+                  <option >Player 1</option>
+                  <option >Player 2</option>
+                  <option >Player 3</option>
+                  <option >Player 4</option>
+                </select>
+        </label>
+        </div>
+            <!-- <div class=" text-right buttonpos" ui-sref="table">
+                <button class="button">
+                        <i class="ion ion-chevron-right"></i>
+                </button>
+            </div> -->
+        </div>
+    </ion-content>
+    
+    
+</ion-view>

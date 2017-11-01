@@ -41,10 +41,10 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     }
   })
 
-  .state('dealerTable', {
-    url: '/dealerTable',
-        templateUrl: 'templates/dealerTable.html' ,
-        controller: 'dealerTableCtrl'
+  .state('player', {
+    url: '/player',
+        templateUrl: 'templates/player.html' ,
+        controller: 'PlayerCtrl'
   })
 
   .state('app.browse', {
@@ -75,5 +75,5 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     }
   });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/dealerTable');
+  $urlRouterProvider.otherwise('/player');
 });
