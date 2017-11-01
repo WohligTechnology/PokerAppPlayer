@@ -47,6 +47,13 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         controller: 'PlayerCtrl'
   })
 
+
+  .state('tab', {
+    url: '/tab',
+        templateUrl: 'templates/tab.html' ,
+        controller: 'TabCtrl'
+  })
+
   .state('app.browse', {
       url: '/browse',
       views: {

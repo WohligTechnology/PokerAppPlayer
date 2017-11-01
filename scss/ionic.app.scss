@@ -63,6 +63,7 @@ $dark:                            #444 !default;
     .cardimg1 {
         width: 80%;
         margin: 0 auto;
+        max-width: 200px;
         img {
             width: 100%;
         }
@@ -71,6 +72,7 @@ $dark:                            #444 !default;
     .cardimg {
         margin: 30% auto;
         width: 60%;
+        max-width: 100px;
         img{
             width: 100%;
         }
@@ -478,4 +480,8 @@ $dark:                            #444 !default;
 
         .marb20{
             margin-bottom: 20px;
+        }
+
+        .tabSelect{
+            margin: 50px auto!important;
         }

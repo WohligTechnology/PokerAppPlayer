@@ -9903,13 +9903,15 @@ a.button {
 
 .cardimg1 {
   width: 80%;
-  margin: 0 auto; }
+  margin: 0 auto;
+  max-width: 200px; }
   .cardimg1 img {
     width: 100%; }
 
 .cardimg {
   margin: 30% auto;
-  width: 60%; }
+  width: 60%;
+  max-width: 100px; }
   .cardimg img {
     width: 100%; }
 
@@ -10231,3 +10233,6 @@ a.button {
 
 .marb20 {
   margin-bottom: 20px; }
+
+.tabSelect {
+  margin: 50px auto !important; }
