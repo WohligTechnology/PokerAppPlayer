@@ -10225,3 +10225,9 @@ a.button {
     display: table;
     width: 100%;
     height: 200px; } }
+
+.floatright {
+  float: right; }
+
+.marb20 {
+  margin-bottom: 20px; }
