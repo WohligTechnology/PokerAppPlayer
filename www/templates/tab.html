@@ -2,19 +2,22 @@
     <ion-content class="bgImg" >
             <div class="list tabSelect player-select">
                     
-            <label class="item item-input item-select">
+            <label class="item item-input item-select" >
                     <div class="input-label">
                      Dealer
                     </div>
-                    <select ng-model="dealerPlayer" ng-change="makeDealer(dealerPlayer);" >
+                    <select ng-model="dealerPlayer" ng-change="makeDealer(dealerPlayer);">
                         <option >Tab 1</option>
                         <option >Tab 2</option>
                         <option >Tab 3</option>
                         <option >Tab 4</option>
                         <option >Tab 5</option>
-                        
+
                     </select>
             </label>
             </div>
+            <div class="marb-30 text-center" >
+                    <button class="button btn-start" ui-sref='player'>Back</button>
+                  </div>
     </ion-content>
 </ion-view>
