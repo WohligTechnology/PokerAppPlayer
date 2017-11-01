@@ -52,80 +52,44 @@ angular.module('starter.controllers', [])
   ];
 })
 
-.controller('PlayerCtrl', function ($scope, $stateParams) {
-  
-      $scope.players = [{
-  
-          'p': [{
-              'player': 'Player1',
-  
-            },
-            {
-              'player': 'Player2',
-  
-            },
-            {
-              'player': 'Player3',
-  
-            },
-            {
-              'player': 'Player4',
-  
-            },
-  
-          ]
-        },
-        {
-  
-          'p': [{
-              'player': 'Player5',
-  
-            },
-            {
-              'player': 'Player6',
-  
-            },
-            {
-              'player': 'Player7',
-  
-            },
-            {
-              'player': 'Player8',
-              'active': true
-  
-            },
-  
-          ]
-        },
-  
-      ]
-      var count=0;
-      var counter = 0;
-      $scope.selected='0-0';
-      console.log($scope.selected);
-      // console.log('helloindex', selected)
-  
-      $scope.currentPlayer = 0
-  
-      $scope.move = function () {
-        $scope.selected='0-0';
-        count++;
-        console.log(count);
-        counter=count%4;
-        console.log("hello",counter);
-        if (0<count && count<4) {
-          $scope.selected = 0+'-'+counter;
-          console.log($scope.selected);
-        } else if(4<=count && count<8){
-          $scope.selected = 1+'-'+counter;
-          console.log("hello",counter);
-      }else{
-         count=0;
-         
-      }
-    }
+.controller('PlayerCtrl', function ($scope, $stateParams, selectPlayer, apiService, $interval) {
+  $interval(function () {
+    $scope.getTabDetail();
+}, 5000);
+  console.log('inside PlayerCtrl');
+     $scope.getTabDetail = function(){
+      apiService.callApiWithData('Player/getTabDetail',{playerNo:selectPlayer.getPlayer()},function(data){
+        $scope.playersCards = data.data.data.playerCards;
+        console.log($scope.playersCards);
+        $scope.communityCards = data.data.data.communityCards;
+      });
+     }
+     $scope.moveTurn = function(){
+      apiService.callApiWithData('Player/changeTurn',{tabId:selectPlayer.getPlayer()},function(data){
+        $scope.getTabDetail();   
+      });
+       console.log('inside moveturn');
+     }
+     $scope.foldPlayerNo = function(){
+      apiService.callApiWithData('Player/fold',{tabId:selectPlayer.getPlayer()},function(data){
+        $scope.getTabDetail();   
+      });
+      
+     }
+     $scope.getTabDetail();
+      
     })
-  .controller('TabCtrl', function($scope, $stateParams) {
+  .controller('TabCtrl', function($scope, $stateParams, selectPlayer, $state) {
+       $scope.players = [1,2,3,4,5,6,7,8];  
+      
+       $scope.currentPlayer = selectPlayer.getPlayer();
+       
+
+       $scope.selectPlayerNo = function(currentPlayer){
+        selectPlayer.setPlayer(currentPlayer);
+        $state.go('player');
+       }
+       
     })
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {

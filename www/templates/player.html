@@ -3,59 +3,32 @@
         <div class="" >
      
     <div class="row text-center"  ng-click='youwin()'>
-        <div class="col-20 ">
-            <div class="cardimg ">
-                <img class="img-responsive" src="img/q.png" alt="">
-
-            </div>
-        </div>
-        <div class="col-20">
-            <div class="cardimg" >
-                <img class="img-responsive" src="img/a.png" alt="">
-            </div>
-        </div>
-        <div class="col-20" >
-                <div class="cardimg">
-                    <img class="img-responsive" src="img/q.png" alt="">
-    
-                </div>
-            </div>
-            <div class="col-20">
-                <div class="cardimg" >
-                    <img class="img-responsive" src="img/a.png" alt="">
-                </div>
-            </div>
-            <div class="col-20" >
-                <div class="cardimg">
-                    <img class="img-responsive" src="img/q.png" alt="">
-    
-                </div>
-            </div>
+        <div class="col-20" ng-repeat= 'card in communityCards track by $index'>
+            <card card='{{card}}' ng-style="style" width="150" height="220"> </card>
+         </div>
+        
     </div>
             <div class="row text-center marb20" >
-                <div class="col-50" ng-click='youlose()'>
+                <div class="col-50"  ng-repeat="card in playersCards.cards">
                     <div class="cardimg1">
-                        <img class="img-responsive" src="img/queen_of_diamonds2.png" alt="">
+                        <card card='{{card}}' ng-style="style" > </card>
 
                     </div>
                 </div>
-                <div class="col-50">
-                    <div class="cardimg1" ng-click='fold()'>
-                        <img class="img-responsive" src="img/7_of_clubs.png" alt="">
-                    </div>
-                </div>
+                
             </div>
             <div class="row marb20">
                 <div class="col-50 text-center" >
-                   <button class="button btn-start">Move</button>
+                   <button class="button btn-start" ng-disabled="!playersCards.isTurn" ng-click="moveTurn()">Move</button>
                 </div>
                 
                <div class="col-50 text-center">
-                 <button class="button btn-start">Fold</button>
+                 <button class="button btn-start" ng-disabled="!playersCards.isTurn" ng-click="foldPlayerNo()">Fold</button>
                </div>
              </div>
+             <div ng-if="playersCards.isFold" style="color:aliceblue" class="marb-30 text-center"><span class="button btn-start " style="background-color:red;color:wheat">Fold</span></div>
              <div class="marb-30 text-center" ui-sref='tab'>
-                <button class="button btn-start">Change Tab</button>
+                <button class="button btn-start" >Change Tab</button>
               </div>
             <!-- <div class=" text-right buttonpos" ui-sref="table">
                 <button class="button">

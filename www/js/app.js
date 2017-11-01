@@ -44,7 +44,8 @@ angular.module('starter', ['ionic', 'starter.controllers'])
   .state('player', {
     url: '/player',
         templateUrl: 'templates/player.html' ,
-        controller: 'PlayerCtrl'
+        controller: 'PlayerCtrl',
+        cache: false
   })
 
 
