@@ -78,6 +78,11 @@ angular.module('starter.controllers', [])
     $state.go('player');
   });
 
+  io.socket.on("update", function (data) {
+    $scope.player = data.data.data.playerCards[selectPlayer.getPlayer() - 1];
+    console.log($scope.playersCards);
+    $scope.communityCards = data.data.data.communityCards;
+  });
   console.log('inside PlayerCtrl');
      $scope.getTabDetail = function(){
      
