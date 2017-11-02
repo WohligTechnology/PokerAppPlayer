@@ -19,11 +19,11 @@
             </div>
             <div class="row marb20">
                 <div class="col-50 text-center">
-                    <button class="button btn-start" ng-disabled="!player.isTurn" ng-click="moveTurn()">Move</button>
+                    <button class="button btn-start" ng-disabled="!player.isTurn || remainingPlayer<=1" ng-click="moveTurn()">Move</button>
                 </div>
 
                 <div class="col-50 text-center">
-                    <button class="button btn-start" ng-disabled="!player.isTurn" ng-click="foldPlayer()">Fold</button>
+                    <button class="button btn-start" ng-disabled="!player.isTurn || remainingPlayer<=1" ng-click="foldPlayer()">Fold</button>
                 </div>
             </div>
             <div ng-if="player.isFold" style="color:aliceblue" class="marb-30 text-center">

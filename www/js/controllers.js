@@ -42,7 +42,9 @@ angular.module('starter.controllers', [])
         return player.playerNo == selectPlayer.getPlayer();
       });
       $scope.communityCards = data.communityCards;
-      console.log($scope.player);
+      $scope.remainingPlayer = _.filter(data.playerCards, function (player) {
+        return player.isActive && !player.isFold;
+      }).length;
       if (!$scope.player) {
         $state.go("tab");
       }
