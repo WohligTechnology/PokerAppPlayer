@@ -26,7 +26,10 @@ angular.module('starter.controllers', [])
       $state.go('winner');
     });
 
-    io.socket.on("Update", compileData);
+    io.socket.on("Update", function (data) {
+      compileData(data);
+      $scope.$apply();
+    });
 
     $scope.getTabDetail = function () {
       apiService.getAll(compileData);
