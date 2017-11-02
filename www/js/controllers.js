@@ -1,9 +1,15 @@
+var playerCtrlSocket = {};
+var winnerCtrlSocket = {};
+
 angular.module('starter.controllers', [])
 
   .controller('AppCtrl', function ($scope, $ionicModal, $timeout) {})
 
 
   .controller('WinnerCtrl', function ($scope, $stateParams, apiService, $state) {
+    io.socket.off("Winner", playerCtrlSocket.winner);
+    io.socket.off("Update", playerCtrlSocket.update);
+
     $scope.showWinner = function () {
       apiService.showWinner(function (data) {
         $scope.winners = data.data.data.winners;
@@ -15,21 +21,30 @@ angular.module('starter.controllers', [])
     };
     $scope.showWinner();
 
-
-    io.socket.on("Update", function (data) {
+    winnerCtrlSocket.update = function (data) {
       $state.go("player");
-    });
+    };
+    io.socket.on("Update", winnerCtrlSocket.update);
+
 
   })
   .controller('PlayerCtrl', function ($scope, $stateParams, selectPlayer, apiService, $interval, $state) {
-    io.socket.on("Winner", function (data) {
-      $state.go('winner');
-    });
 
-    io.socket.on("Update", function (data) {
+    io.socket.off("Update", winnerCtrlSocket.update);
+
+
+
+    playerCtrlSocket.winner = function (data) {
+      $state.go('winner');
+    };
+    io.socket.on("Winner", playerCtrlSocket.winner);
+
+
+    playerCtrlSocket.update = function (data) {
       compileData(data);
       $scope.$apply();
-    });
+    };
+    io.socket.on("Update", playerCtrlSocket.update);
 
     $scope.getTabDetail = function () {
       apiService.getAll(compileData);
