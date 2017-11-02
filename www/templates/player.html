@@ -15,11 +15,11 @@
             </div>
             <div class="row marb20">
                 <div class="col-50 text-center" >
-                   <button class="button btn-start" ng-disabled="!playersCards.isTurn" ng-click="moveTurn()">Move</button>
+                   <button class="button btn-start" ng-disabled="!player.isTurn" ng-click="moveTurn()">Move</button>
                 </div>
                 
                <div class="col-50 text-center">
-                 <button class="button btn-start" ng-disabled="!playersCards.isTurn" ng-click="foldPlayerNo()">Fold</button>
+                 <button class="button btn-start" ng-disabled="!player.isTurn" ng-click="foldPlayerNo()">Fold</button>
                </div>
              </div>
              <div ng-if="playersCards.isFold" style="color:aliceblue" class="marb-30 text-center"><span class="button btn-start " style="background-color:red;color:wheat">Fold</span></div>
