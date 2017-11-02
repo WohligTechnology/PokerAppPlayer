@@ -9961,7 +9961,8 @@ a.button {
 .btn-start {
   font-size: 25px;
   padding: 0px 20px;
-  margin-top: 30px; }
+  margin-top: 30px;
+  width: 300px; }
 
 .platform-ipad .btn-start {
   padding: 10px 30px;
@@ -10105,9 +10106,6 @@ a.button {
     min-height: 35px;
     font-size: 12px; }
 
-.players img {
-  border: 3px solid white; }
-
 .players h2 {
   color: white;
   margin-bottom: 20px !important;
@@ -10236,3 +10234,13 @@ a.button {
 
 .tabSelect {
   margin: 50px auto !important; }
+
+.changeTab button {
+  color: white;
+  font-size: 30px;
+  float: right; }
+
+.winnersHead {
+  font-size: 24px;
+  color: white;
+  text-align: center; }

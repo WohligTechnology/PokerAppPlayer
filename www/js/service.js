@@ -1,8 +1,9 @@
 myApp = angular.module('starter');
 
 myApp.service("selectPlayer", function () {
-  this.currentPlayer = '';
+  this.currentPlayer = $.jStorage.get("player");
   this.setPlayer = function (playerId) {
+    $.jStorage.set("player", playerId);
     this.currentPlayer = playerId;
   };
   this.getPlayer = function () {
