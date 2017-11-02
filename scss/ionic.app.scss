@@ -498,3 +498,9 @@ $dark:                            #444 !default;
             color: white;
             text-align: center;
         }
+
+        .item.item-input input.passwordtext {
+            font-size: 20px;
+            color: white;
+            padding-left: 20px;
+        }

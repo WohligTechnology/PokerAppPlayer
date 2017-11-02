@@ -10244,3 +10244,8 @@ a.button {
   font-size: 24px;
   color: white;
   text-align: center; }
+
+.item.item-input input.passwordtext {
+  font-size: 20px;
+  color: white;
+  padding-left: 20px; }
