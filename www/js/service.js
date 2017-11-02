@@ -19,6 +19,11 @@ myApp.factory('apiService', function ($http, $q, $timeout) {
         callback(data);
       });
     },
+    getAll: function (callback) {
+      $http.post(adminurl + 'Player/getAll').then(function (data) {
+        callback(data.data.data);
+      });
+    },
     showWinner: function (callback) {
       $http.post(adminurl + 'Player/showWinner').then(function (data) {
         callback(data);

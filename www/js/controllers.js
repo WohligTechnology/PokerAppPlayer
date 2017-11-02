@@ -26,25 +26,25 @@ angular.module('starter.controllers', [])
       $state.go('winner');
     });
 
-    io.socket.on("Update", function (data) {
+    io.socket.on("Update", compileData);
+
+    $scope.getTabDetail = function () {
+      apiService.getAll(compileData);
+    };
+    $scope.getTabDetail();
+
+
+    function compileData(data) {
       $scope.player = _.find(data.playerCards, function (player) {
         return player.playerNo == selectPlayer.getPlayer();
       });
       $scope.communityCards = data.communityCards;
-      $scope.$apply();
-    });
+      console.log($scope.player);
+      if (!$scope.player) {
+        $state.go("tab");
+      }
+    }
 
-    $scope.getTabDetail = function () {
-      apiService.callApiWithData('Player/getAll', {
-        tabId: selectPlayer.getPlayer()
-      }, function (data) {
-        $scope.player = _.find(data.data.data.playerCards, function (player) {
-          return player.playerNo == selectPlayer.getPlayer();
-        });
-        $scope.communityCards = data.data.data.communityCards;
-      });
-    };
-    $scope.getTabDetail();
 
     $scope.moveTurn = function () {
       $scope.player.isTurn = true;
