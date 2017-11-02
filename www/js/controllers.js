@@ -1,14 +1,10 @@
 angular.module('starter.controllers', [])
 
-  .controller('AppCtrl', function ($scope, $ionicModal, $timeout) {
-
-
-  })
+  .controller('AppCtrl', function ($scope, $ionicModal, $timeout) {})
 
 
   .controller('WinnerCtrl', function ($scope, $stateParams, apiService, $state) {
     io.socket.on("broadcastNewGame", function (data) {
-      console.log(" inside broadcastNewGame");
       $state.go('player');
     });
 
@@ -25,61 +21,48 @@ angular.module('starter.controllers', [])
   })
   .controller('PlayerCtrl', function ($scope, $stateParams, selectPlayer, apiService, $interval, $state) {
     io.socket.on("broadcastWinner", function (data) {
-      console.log(" inside broadcastWinner");
       $state.go('winner');
     });
     io.socket.on("broadcastNewGame", function (data) {
-      console.log(" inside broadcastNewGame");
       $state.go('player');
     });
 
-  io.socket.on("Update", function (data) {
-    console.log("inside update");
-    
-    $scope.player = data.playerCards[selectPlayer.getPlayer() - 1];
-    
-    $scope.communityCards = data.communityCards;
-    $scope.$apply();
-  });
-  console.log('inside PlayerCtrl');
-     
+    io.socket.on("Update", function (data) {
+      $scope.player = data.playerCards[selectPlayer.getPlayer() - 1];
+      $scope.communityCards = data.communityCards;
+      $scope.$apply();
+    });
+
     $scope.getTabDetail = function () {
 
       apiService.callApiWithData('Player/getAll', {
         tabId: selectPlayer.getPlayer()
       }, function (data) {
         $scope.player = data.data.data.playerCards[selectPlayer.getPlayer() - 1];
-        console.log($scope.playersCards);
         $scope.communityCards = data.data.data.communityCards;
       });
-    }
+    };
     $scope.moveTurn = function () {
       apiService.callApiWithData('Player/changeTurn', {
         tabId: selectPlayer.getPlayer()
       }, function (data) {
         $scope.getTabDetail();
       });
-      console.log('inside moveturn');
-    }
+    };
     $scope.foldPlayerNo = function () {
       apiService.callApiWithData('Player/fold', {
         tabId: selectPlayer.getPlayer()
       }, function (data) {
         $scope.getTabDetail();
       });
-
-    }
+    };
     $scope.getTabDetail();
-
   })
   .controller('TabCtrl', function ($scope, $stateParams, selectPlayer, $state) {
     $scope.players = [1, 2, 3, 4, 5, 6, 7, 8];
     $scope.currentPlayer = selectPlayer.getPlayer();
     $scope.selectPlayerNo = function (currentPlayer) {
       selectPlayer.setPlayer(currentPlayer);
-      //$state.go('player');
-    }
-
+    };
   })
-
   .controller('PlaylistCtrl', function ($scope, $stateParams) {});

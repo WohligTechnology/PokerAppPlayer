@@ -1,33 +1,29 @@
 myApp = angular.module('starter');
 
-myApp.service("selectPlayer", function(){
-    this.currentPlayer = '';
-    this.setPlayer = function(playerId){
-      this.currentPlayer = playerId;
-    }
-    this.getPlayer = function(){
-      return this.currentPlayer;
-    }
-})
+myApp.service("selectPlayer", function () {
+  this.currentPlayer = '';
+  this.setPlayer = function (playerId) {
+    this.currentPlayer = playerId;
+  };
+  this.getPlayer = function () {
+    return this.currentPlayer;
+  };
+});
 myApp.factory('apiService', function ($http, $q, $timeout) {
-    var adminurl = 'http://localhost:8081/api/'
-    return {
-
-        // This is a demo Service for POST Method.
-        callApiWithData: function (url, data, callback) {
-            console.log("inside apiService");
-            $http.post(adminurl + url, data).then(function (data) {
-                callback(data);
-            });
-        },
-        showWinner: function (callback) {
-          $http.post(adminurl + 'Player/showWinner').then(function (data) {
-              callback(data);
-          });
+  var adminurl = 'http://localhost:8081/api/';
+  return {
+    // This is a demo Service for POST Method.
+    callApiWithData: function (url, data, callback) {
+      $http.post(adminurl + url, data).then(function (data) {
+        callback(data);
+      });
+    },
+    showWinner: function (callback) {
+      $http.post(adminurl + 'Player/showWinner').then(function (data) {
+        callback(data);
+      });
     }
-  }
-
- 
+  };
 });
 
 myApp.directive('card', function () {
@@ -42,9 +38,7 @@ myApp.directive('card', function () {
     templateUrl: '/templates/directive/card.html',
     link: function ($scope, element, attr) {
       function calc() {
-        console.log($scope.card);
         if ($scope.card.length == 2) {
-          console.log($scope.card.length);
           $scope.cardColor = $scope.card[1];
           $scope.cardNo = $scope.card[0];
           if ($scope.card[0] == "T") {
@@ -81,41 +75,41 @@ myApp.directive('card', function () {
   };
 });
 
-  myApp.directive('community', function () {
-    return {
-      restrict: 'E',
-      replace: false,
-      scope: {
-        communityCard: "=ngCommunityCard"
-      },
-      templateUrl: '/templates/directive/communityCard.html',
-      link: function ($scope, element, attr) {
+myApp.directive('community', function () {
+  return {
+    restrict: 'E',
+    replace: false,
+    scope: {
+      communityCard: "=ngCommunityCard"
+    },
+    templateUrl: '/templates/directive/communityCard.html',
+    link: function ($scope, element, attr) {
 
-      }
-    };
-  })
+    }
+  };
+})
 
-  myApp.directive('winnerPlayer', function () {
-    return {
-      restrict: 'E',
-      replace: false,
-      scope: {
-        player: "=ngPlayer",
-        method: "="
-      },
-      templateUrl: '/templates/directive/winnerPlayer.html',
-      link: function ($scope, element, attr) {}
-    };
-  })
+myApp.directive('winnerPlayer', function () {
+  return {
+    restrict: 'E',
+    replace: false,
+    scope: {
+      player: "=ngPlayer",
+      method: "="
+    },
+    templateUrl: '/templates/directive/winnerPlayer.html',
+    link: function ($scope, element, attr) {}
+  };
+})
 
-  myApp.directive('player', function () {
-    return {
-      restrict: 'E',
-      replace: false,
-      scope: {
-        player: "=ngPlayer"
-      },
-      templateUrl: '/templates/directive/player.html',
-      link: function ($scope, element, attr) {}
-    };
-  })
+myApp.directive('player', function () {
+  return {
+    restrict: 'E',
+    replace: false,
+    scope: {
+      player: "=ngPlayer"
+    },
+    templateUrl: '/templates/directive/player.html',
+    link: function ($scope, element, attr) {}
+  };
+})
