@@ -4,17 +4,13 @@
      
     <div class="row text-center"  ng-click='youwin()'>
         <div class="col-20" ng-repeat= 'card in communityCards track by $index'>
-            <card card='{{card}}' ng-style="style" width="150" height="220"> </card>
+            <community ng-community-card="card"></community>
          </div>
         
     </div>
-            <div class="row text-center marb20" >
-                <div class="col-50"  ng-repeat="card in playersCards.cards">
-                    <div class="cardimg1">
-                        <card card='{{card}}' ng-style="style" > </card>
-
-                    </div>
-                </div>
+    
+            <div class="text-center marb20" >
+                <player ng-player="player"></player>
                 
             </div>
             <div class="row marb20">

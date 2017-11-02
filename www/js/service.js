@@ -19,26 +19,32 @@ myApp.factory('apiService', function ($http, $q, $timeout) {
             $http.post(adminurl + url, data).then(function (data) {
                 callback(data);
             });
-        }
+        },
+        showWinner: function (callback) {
+          $http.post(adminurl + 'Player/showWinner').then(function (data) {
+              callback(data);
+          });
     }
+  }
 
  
 });
 
 myApp.directive('card', function () {
-    return {
-      restrict: 'E',
-      replace: false,
-      scope: {
-        card: "@",
-        width: "@",
-        height: "@"
-      },
-      templateUrl: '/templates/directive/card.html',
-      link: function ($scope, element, attr) {
-        console.log("the length is: " + $scope.card);
+  return {
+    restrict: 'E',
+    replace: false,
+    scope: {
+      card: "@",
+      width: "@",
+      height: "@"
+    },
+    templateUrl: '/templates/directive/card.html',
+    link: function ($scope, element, attr) {
+      function calc() {
+        console.log($scope.card);
         if ($scope.card.length == 2) {
-          
+          console.log($scope.card.length);
           $scope.cardColor = $scope.card[1];
           $scope.cardNo = $scope.card[0];
           if ($scope.card[0] == "T") {
@@ -51,6 +57,12 @@ myApp.directive('card', function () {
             width: $scope.width + "px",
             height: $scope.height + "px"
           };
+        } else if ($scope.card == "NONE" || $scope.card == "") {
+          $scope.cardImg = Poker.getBackData(1024, '#535550', '#535550');
+          $scope.style = {
+            width: $scope.width + "px",
+            height: $scope.height + "px"
+          };
         } else {
           $scope.cardImg = Poker.getBackData(1024, '#58AAAF', '#1F7A80');
           $scope.style = {
@@ -58,33 +70,52 @@ myApp.directive('card', function () {
             height: $scope.height + "px"
           };
         }
-        $scope.$watch(function(scope) { return scope.card },
-        function() {
-          if ($scope.card.length == 2) {
-            
-            $scope.cardColor = $scope.card[1];
-            $scope.cardNo = $scope.card[0];
-            if ($scope.card[0] == "T") {
-              $scope.cardNo = "10";
-            } else if ($scope.card[0] == "1") {
-              $scope.cardNo = "A";
-            }
-            $scope.cardImg = Poker.getCardData(1024, $scope.cardColor, $scope.cardNo);
-            $scope.style = {
-              width: $scope.width + "px",
-              height: $scope.height + "px"
-            };
-          } else {
-            $scope.cardImg = Poker.getBackData(1024, '#58AAAF', '#1F7A80');
-            $scope.style = {
-              width: $scope.width + "px",
-              height: $scope.height + "px"
-            };
-          } 
-        }
-       );
+      }
+      calc();
+      $scope.$watch("card", function () {
+        calc();
+      });
 
+
+    }
+  };
+});
+
+  myApp.directive('community', function () {
+    return {
+      restrict: 'E',
+      replace: false,
+      scope: {
+        communityCard: "=ngCommunityCard"
+      },
+      templateUrl: '/templates/directive/communityCard.html',
+      link: function ($scope, element, attr) {
 
       }
     };
-  });
+  })
+
+  myApp.directive('winnerPlayer', function () {
+    return {
+      restrict: 'E',
+      replace: false,
+      scope: {
+        player: "=ngPlayer",
+        method: "="
+      },
+      templateUrl: '/templates/directive/winnerPlayer.html',
+      link: function ($scope, element, attr) {}
+    };
+  })
+
+  myApp.directive('player', function () {
+    return {
+      restrict: 'E',
+      replace: false,
+      scope: {
+        player: "=ngPlayer"
+      },
+      templateUrl: '/templates/directive/player.html',
+      link: function ($scope, element, attr) {}
+    };
+  })

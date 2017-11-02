@@ -4,7 +4,7 @@
                     
             <label class="item item-input item-select">
                     <div class="input-label">
-                     Dealer
+                     Player
                     </div>
                     <select ng-model="currentPlayer" ng-change="selectPlayerNo(currentPlayer)" >
                         <option ng-repeat="p in players"  value="{{p}}" >Player{{p}}</option>
@@ -12,5 +12,8 @@
                     </select>
             </label>
             </div>
+            <div class="marb-30 text-center" >
+                               <button class="button btn-start" ui-sref='player'>Back</button>
+                                  </div>
     </ion-content>
 </ion-view>
