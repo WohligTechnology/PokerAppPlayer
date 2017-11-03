@@ -68,11 +68,11 @@ angular.module('starter.controllers', [])
 
     $scope.moveTurn = function () {
       $scope.player.isTurn = true;
-      apiService.callApiWithData('Player/moveTurn', {}, function (data) {});
+      apiService.moveTurn(function (data) {});
     };
     $scope.foldPlayer = function () {
       $scope.player.isTurn = true;
-      apiService.callApiWithData('Player/fold', {}, function (data) {});
+      apiService.foldPlayer(function (data) {});
     };
 
   })

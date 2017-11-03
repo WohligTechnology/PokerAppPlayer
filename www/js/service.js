@@ -28,6 +28,19 @@ myApp.factory('apiService', function ($http, $q, $timeout) {
       $http.post(adminurl + 'Player/showWinner').then(function (data) {
         callback(data);
       });
+
+    },
+    moveTurn:function (callback) {
+      $http.post(adminurl + 'Player/moveTurn').then(function (data) {
+        callback(data);
+      });
+
+    },
+    foldPlayer : function (callback) {
+      $http.post(adminurl + 'Player/fold').then(function (data) {
+        callback(data);
+      });
+
     }
   };
 });
