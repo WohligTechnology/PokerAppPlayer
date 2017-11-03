@@ -6,13 +6,23 @@ angular.module('starter.controllers', [])
   .controller('AppCtrl', function ($scope, $ionicModal, $timeout) {})
 
 
-  .controller('WinnerCtrl', function ($scope, $stateParams, apiService, $state) {
+  .controller('WinnerCtrl', function ($scope, $stateParams, apiService, $state, selectPlayer) {
     io.socket.off("Winner", playerCtrlSocket.winner);
     io.socket.off("Update", playerCtrlSocket.update);
 
     $scope.showWinner = function () {
       apiService.showWinner(function (data) {
         $scope.players = data.data.data.winners;
+        $scope.player = _.find($scope.players, function (player) {
+          return player.playerNo == selectPlayer.getPlayer();
+        });
+        if ($scope.player) {
+          if ($scope.player.winner) {
+            $scope.meWinner = "Win";
+          } else {
+            $scope.meWinner = "Lose";
+          }
+        }
 
         $scope.winners = _.filter($scope.players, function (player) {
           return player.winner;

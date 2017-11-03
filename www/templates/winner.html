@@ -9,6 +9,8 @@
       <h1 class="winnersHead">Winner: {{winnerString}}
         <span ng-if="winners.length>1">(SPLIT POT)</span>
       </h1>
+      <h1 class="winnersHead" ng-if="meWinner">(You {{meWinner}})
+      </h1>
       <div ng-repeat="player in players" ng-if="player">
         <winner-player ng-player="player"></winner-player>
       </div>
