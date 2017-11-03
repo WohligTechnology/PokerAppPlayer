@@ -12,9 +12,9 @@ myApp.service("selectPlayer", function () {
 });
 myApp.factory('apiService', function ($http, $q, $timeout) {
 
-  var adminUUU = 'http://192.168.1.116:8081';
+  var adminUUU = 'http://localhost:8081';
   io.sails.url = adminUUU;
-  var adminurl = 'http://192.168.1.116:8081/api/';
+  var adminurl = 'http://localhost:8081/api/';
 
   return {
     // This is a demo Service for POST Method.

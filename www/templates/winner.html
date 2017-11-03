@@ -7,12 +7,13 @@
         </div>
       </div>
       <h1 class="winnersHead">Winner: {{winnerString}}
+        <span ng-if="winners.length>1">(SPLIT POT)</span>
       </h1>
-      <div ng-repeat="winner in winners" ng-if="winner">
-        <winner-player ng-player="winner"></winner-player>
+      <div ng-repeat="player in players" ng-if="player">
+        <winner-player ng-player="player"></winner-player>
       </div>
-      <div class="marb-30 text-center" ui-sref='player'>
-        <button class="button btn-start">Back</button>
+      <div class="marb-30 text-center padding">
+        <a class="button btn-start" ui-sref='player'>Back</a>
       </div>
     </div>
   </ion-content>

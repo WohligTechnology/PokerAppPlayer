@@ -12,7 +12,11 @@ angular.module('starter.controllers', [])
 
     $scope.showWinner = function () {
       apiService.showWinner(function (data) {
-        $scope.winners = data.data.data.winners;
+        $scope.players = data.data.data.winners;
+
+        $scope.winners = _.filter($scope.players, function (player) {
+          return player.winner;
+        });
         $scope.communityCards = data.data.data.communityCards;
         $scope.winnerString = _.join(_.map($scope.winners, function (n) {
           return "Player " + n.playerNo;

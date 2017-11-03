@@ -10241,9 +10241,10 @@ a.button {
   float: right; }
 
 .winnersHead {
-  font-size: 24px;
+  font-size: 30px;
   color: white;
-  text-align: center; }
+  text-align: center;
+  padding-bottom: 20px; }
 
 .item.item-input input.passwordtext {
   font-size: 20px;
