@@ -11,7 +11,11 @@ myApp.service("selectPlayer", function () {
   };
 });
 myApp.factory('apiService', function ($http, $q, $timeout) {
+
+  var adminUUU = 'http://192.168.1.116:8081';
+  io.sails.url = adminUUU;
   var adminurl = 'http://192.168.1.116:8081/api/';
+
   return {
     // This is a demo Service for POST Method.
     callApiWithData: function (url, data, callback) {
@@ -54,7 +58,7 @@ myApp.directive('card', function () {
       width: "@",
       height: "@"
     },
-    templateUrl: '/templates/directive/card.html',
+    templateUrl: 'templates/directive/card.html',
     link: function ($scope, element, attr) {
       function calc() {
         if ($scope.card.length == 2) {
@@ -101,7 +105,7 @@ myApp.directive('community', function () {
     scope: {
       communityCard: "=ngCommunityCard"
     },
-    templateUrl: '/templates/directive/communityCard.html',
+    templateUrl: 'templates/directive/communityCard.html',
     link: function ($scope, element, attr) {
 
     }
@@ -116,7 +120,7 @@ myApp.directive('winnerPlayer', function () {
       player: "=ngPlayer",
       method: "="
     },
-    templateUrl: '/templates/directive/winnerPlayer.html',
+    templateUrl: 'templates/directive/winnerPlayer.html',
     link: function ($scope, element, attr) {}
   };
 })
@@ -128,7 +132,7 @@ myApp.directive('player', function () {
     scope: {
       player: "=ngPlayer"
     },
-    templateUrl: '/templates/directive/player.html',
+    templateUrl: 'templates/directive/player.html',
     link: function ($scope, element, attr) {}
   };
 })
