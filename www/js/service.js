@@ -11,7 +11,7 @@ myApp.service("selectPlayer", function () {
   };
 });
 myApp.factory('apiService', function ($http, $q, $timeout) {
-  var adminurl = 'http://localhost:8081/api/';
+  var adminurl = 'http://192.168.1.116:8081/api/';
   return {
     // This is a demo Service for POST Method.
     callApiWithData: function (url, data, callback) {
@@ -30,13 +30,13 @@ myApp.factory('apiService', function ($http, $q, $timeout) {
       });
 
     },
-    moveTurn:function (callback) {
+    moveTurn: function (callback) {
       $http.post(adminurl + 'Player/moveTurn').then(function (data) {
         callback(data);
       });
 
     },
-    foldPlayer : function (callback) {
+    foldPlayer: function (callback) {
       $http.post(adminurl + 'Player/fold').then(function (data) {
         callback(data);
       });
