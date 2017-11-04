@@ -12,9 +12,6 @@ myApp.service("selectPlayer", function () {
 });
 myApp.factory('apiService', function ($http, $q, $timeout) {
 
-  var adminUUU = 'http://localhost:8081';
-  io.sails.url = adminUUU;
-  var adminurl = 'http://localhost:8081/api/';
 
   return {
     // This is a demo Service for POST Method.
