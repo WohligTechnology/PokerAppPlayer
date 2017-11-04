@@ -16,6 +16,8 @@ angular.module('starter.controllers', [])
         $scope.player = _.find($scope.players, function (player) {
           return player.playerNo == selectPlayer.getPlayer();
         });
+        $scope.playersChunks = _.chunk($scope.players, 2);
+
         if ($scope.player) {
           if ($scope.player.winner) {
             $scope.meWinner = "Win";
