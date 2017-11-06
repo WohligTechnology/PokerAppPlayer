@@ -12,7 +12,7 @@
       <h1 class="winnersHead" ng-if="meWinner">(You {{meWinner}})
       </h1>
       <div class="row" ng-repeat="playersChunk in playersChunks">
-        <div class="col-50 p10" ng-repeat="player in playersChunk" ng-if="player" ng-class="{'winner-section':player.winner}">
+        <div class="col-50 p10" ng-repeat="player in playersChunk" ng-class="{'winner-section':player.winner}" ng-if="player.winner">
           <winner-player ng-player="player"></winner-player>
         </div>
       </div>
