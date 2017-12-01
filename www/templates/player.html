@@ -12,22 +12,34 @@
                     <community ng-community-card="card"></community>
                 </div>
             </div>
-
             <div class="text-center marb20">
                 <player ng-player="player"></player>
-
             </div>
             <div class="row marb20">
-                <div class="col-50 text-center">
-                    <button class="button btn-start" ng-disabled="!player.isTurn || remainingPlayer<=1" ng-click="moveTurn()">Move</button>
+                <div class="col-25 text-center">
+                    <button class="button btn-start" ng-disabled="!player.isTurn || remainingPlayer<=1" ng-click="moveTurn()">All In</button>
                 </div>
 
-                <div class="col-50 text-center">
+                <div class="col-25 text-center">
+                    <button class="button btn-start" ng-disabled="!player.isTurn || remainingPlayer<=1" ng-click="moveTurn()">Raise</button>
+                </div>
+
+                <div class="col-25 text-center" ng-if="isCheck">
+                    <button class="button btn-start" ng-disabled="!player.isTurn || remainingPlayer<=1" ng-click="moveTurn()">Check</button>
+                </div>
+                <div class="col-25 text-center" ng-if="!isCheck">
+                    <button class="button btn-start" ng-disabled="!player.isTurn || remainingPlayer<=1" ng-click="moveTurn()">Call</button>
+                </div>
+
+                <div class="col-25 text-center">
                     <button class="button btn-start" ng-disabled="!player.isTurn || remainingPlayer<=1" ng-click="foldPlayer()">Fold</button>
                 </div>
             </div>
             <div ng-if="player.isFold" style="color:aliceblue" class="marb-30 text-center">
                 <span class="button btn-start " style="background-color:red;color:wheat">Fold</span>
+            </div>
+            <div ng-if="player.isAllIn" style="color:aliceblue" class="marb-30 text-center">
+                <span class="button btn-start " style="background-color:red;color:wheat">All In</span>
             </div>
             <div ng-if="!player.isActive" style="color:aliceblue" class="marb-30 text-center">
                 <span class="button btn-start " style="background-color:red;color:wheat">Not Active</span>
@@ -35,13 +47,6 @@
             <div ng-if="player.isDealer" style="color:aliceblue" class="marb-30 text-center">
                 <span class="button btn-start " style="background-color:orange;color:wheat"> Dealer</span>
             </div>
-
-
-            <!-- <div class=" text-right buttonpos" ui-sref="table">
-                <button class="button">
-                        <i class="ion ion-chevron-right"></i>
-                </button>
-            </div> -->
         </div>
     </ion-content>
 

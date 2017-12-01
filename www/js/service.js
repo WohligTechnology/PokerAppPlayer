@@ -37,11 +37,20 @@ myApp.factory('apiService', function ($http, $q, $timeout) {
       });
 
     },
-    foldPlayer: function (callback) {
+    fold: function (callback) {
       $http.post(adminurl + 'Player/fold').then(function (data) {
         callback(data);
       });
-
+    },
+    allIn: function (callback) {
+      $http.post(adminurl + 'Player/allIn').then(function (data) {
+        callback(data);
+      });
+    },
+    raise: function (callback) {
+      $http.post(adminurl + 'Player/raise').then(function (data) {
+        callback(data);
+      });
     }
   };
 });

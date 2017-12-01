@@ -55,11 +55,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         templateUrl: 'templates/tab.html',
         controller: 'TabCtrl'
       })
-      .state('winner', {
-        url: '/winner',
-        templateUrl: 'templates/winner.html',
-        controller: 'WinnerCtrl'
-      })
+
       .state('app.browse', {
         url: '/browse',
         views: {
