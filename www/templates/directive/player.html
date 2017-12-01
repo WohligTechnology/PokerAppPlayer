@@ -2,16 +2,11 @@
 
     <div class="text-center" ng-class="{'player-turn':player.isTurn,'not-active':!player.isActive,'player-fold':player.isFold}">
         <div class="row">
-            <div class="col-50 relative ">
-                <card card='DONE' width="200" height="300" ng-show="player.cards.length > 0" class="animatedCard" ng-style="dragCss"> </card>
-                <card card='{{player.cards[0]}}' width="200" height="300" ng-show="player.cards.length > 0" class="animatedCardOpen" ng-style="dragCssOpen">
-                </card>
-
+            <div class="col-50 ">
+                <animated-card card="{{player.cards[0]}}" player="player"></animated-card>
             </div>
-            <div class="col-50 relative ">
-                <card card='DONE' width="200" height="300" ng-show="player.cards.length > 1" class="animatedCard" ng-style="dragCss"> </card>
-                <card card='{{player.cards[1]}}' width="200" height="300" ng-show="player.cards.length > 1" class="animatedCardOpen" ng-style="dragCssOpen">
-                </card>
+            <div class="col-50 ">
+                <animated-card card="{{player.cards[1]}}" player="player"></animated-card>
             </div>
         </div>
 

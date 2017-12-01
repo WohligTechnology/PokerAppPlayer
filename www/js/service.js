@@ -158,3 +158,51 @@ myApp.directive('player', function ($ionicGesture) {
     }
   };
 });
+
+
+myApp.directive('animatedCard', function ($ionicGesture) {
+  return {
+    restrict: 'E',
+    replace: false,
+    scope: {
+      player: "="
+    },
+    templateUrl: 'templates/directive/animatedCard.html',
+    link: function ($scope, $element, attr) {
+      $scope.card = attr.card;
+      var cardHeight = 300;
+      var topMargin = 0;
+      var maxDragPercent = 60;
+      $scope.dragCss = {
+        width: "100%",
+        overflow: "hidden",
+      };
+      $scope.dragCssOpen = {
+        width: "100%",
+        overflow: "hidden",
+        height: "0px"
+      };
+      this.onDrag = function (event) {
+        var upDistance = event.gesture.distance;
+        var amountUp = (cardHeight - upDistance);
+        var dragPercent = upDistance / cardHeight * 100;
+        if (dragPercent < maxDragPercent) {
+          var topPosition = (cardHeight - (2 * upDistance));
+          $scope.dragCss.height = amountUp + "px";
+          $scope.dragCssOpen.height = upDistance + "px";
+          $scope.dragCssOpen.top = (topPosition + topMargin) + "px";
+          $scope.$apply();
+        }
+      };
+      this.onDragEnd = function (event) {
+        $scope.dragCss.height = cardHeight + "px";
+        $scope.dragCssOpen.height = "0px";
+        $scope.dragCssOpen.top = cardHeight + topMargin + "px";
+        $scope.$apply();
+      };
+      $ionicGesture.on('dragup', this.onDrag, $element);
+      $ionicGesture.on('dragend', this.onDragEnd, $element);
+
+    }
+  };
+});
