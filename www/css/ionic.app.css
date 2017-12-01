@@ -9872,6 +9872,9 @@ a.button {
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
 
+body {
+  -webkit-overflow-scrolling: touch; }
+
 .bgImg {
   background-image: url(../img/bg-added.jpg);
   width: auto;
@@ -10257,3 +10260,18 @@ a.button {
 .winner-section {
   background: rgba(220, 117, 0, 0.44);
   border-radius: 20px; }
+
+card.animatedCardOpen {
+  position: absolute;
+  left: 50%;
+  top: 50px;
+  transform: translate(-50%, 0%); }
+
+card.animatedCard {
+  position: absolute;
+  left: 50%;
+  top: 50px;
+  transform: translate(-50%, 0%); }
+
+.relative {
+  position: relative; }
