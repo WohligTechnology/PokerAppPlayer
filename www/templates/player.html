@@ -8,7 +8,7 @@
                 <h2 class="winnersHead">Player {{player.playerNo}}</h2>
             </div>
             <div class="row text-center" ng-click='youwin()'>
-                <div class="col-20" ng-repeat='card in communityCards track by $index'>
+                <div class="col-20" ng-repeat='card in communityCards track by $index' ng-if="!card.isBurn">
                     <community ng-community-card="card"></community>
                 </div>
             </div>
