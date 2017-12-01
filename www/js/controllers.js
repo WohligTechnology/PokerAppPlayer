@@ -37,6 +37,9 @@ angular.module('starter.controllers', [])
       } else {
         $scope.isCheck = false;
       }
+      if (data.newGame) {
+        $scope.removeWinner();
+      }
     }
 
     $scope.raise = function () {
@@ -59,6 +62,16 @@ angular.module('starter.controllers', [])
       $scope.player.isTurn = false;
       apiService.fold(function (data) {});
     };
+
+    $scope.showWinner = function () {
+      console.log("Show Winner Called");
+    };
+
+    $scope.removeWinner = function () {
+      console.log("Remove Winner Called");
+    };
+
+    io.socket.on("ShowWinner", $scope.showWinner);
 
   })
   .controller('TabCtrl', function ($scope, $stateParams, selectPlayer, $state) {
