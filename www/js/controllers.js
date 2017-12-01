@@ -63,7 +63,8 @@ angular.module('starter.controllers', [])
       apiService.fold(function (data) {});
     };
 
-    $scope.showWinner = function () {
+    $scope.showWinner = function (data) {
+      console.log(data);
       console.log("Show Winner Called");
     };
 
