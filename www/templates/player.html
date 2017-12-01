@@ -7,46 +7,46 @@
                 </button>
                 <h2 class="winnersHead">Player {{player.playerNo}}</h2>
             </div>
-            <div class="row text-center" ng-click='youwin()'>
+            <!-- <div class="row text-center" ng-click='youwin()'>
                 <div class="col-20" ng-repeat='card in communityCards track by $index' ng-if="!card.isBurn">
                     <community ng-community-card="card"></community>
                 </div>
-            </div>
+            </div> -->
 
             <div class="row marb20">
                 <div class="col-25 text-center">
-                    <button class="button btn-start" ng-disabled="!player.isTurn || remainingPlayer<=1" ng-click="allIn()">All In</button>
+                    <button class="button button-block" ng-disabled="!player.isTurn || remainingPlayer<=1" ng-click="allIn()">All In</button>
                 </div>
 
                 <div class="col-25 text-center">
-                    <button class="button btn-start" ng-disabled="!player.isTurn || remainingPlayer<=1" ng-click="raise()">Raise</button>
+                    <button class="button button-block" ng-disabled="!player.isTurn || remainingPlayer<=1" ng-click="raise()">Raise</button>
                 </div>
 
                 <div class="col-25 text-center" ng-if="isCheck">
-                    <button class="button btn-start" ng-disabled="!player.isTurn || remainingPlayer<=1" ng-click="check()">Check</button>
+                    <button class="button button-block" ng-disabled="!player.isTurn || remainingPlayer<=1" ng-click="check()">Check</button>
                 </div>
                 <div class="col-25 text-center" ng-if="!isCheck">
-                    <button class="button btn-start" ng-disabled="!player.isTurn || remainingPlayer<=1" ng-click="call()">Call</button>
+                    <button class="button button-block" ng-disabled="!player.isTurn || remainingPlayer<=1" ng-click="call()">Call</button>
                 </div>
 
                 <div class="col-25 text-center">
-                    <button class="button btn-start" ng-disabled="!player.isTurn || remainingPlayer<=1" ng-click="fold()">Fold</button>
+                    <button class="button button-block" ng-disabled="!player.isTurn || remainingPlayer<=1" ng-click="fold()">Fold</button>
                 </div>
             </div>
             <div class="text-center marb20">
                 <player ng-player="player"></player>
             </div>
             <div ng-if="player.isFold" style="color:aliceblue" class="marb-30 text-center">
-                <span class="button btn-start " style="background-color:red;color:wheat">Fold</span>
+                <span class="button button-block " style="background-color:red;color:wheat">Fold</span>
             </div>
             <div ng-if="player.isAllIn" style="color:aliceblue" class="marb-30 text-center">
-                <span class="button btn-start " style="background-color:red;color:wheat">All In</span>
+                <span class="button button-block " style="background-color:red;color:wheat">All In</span>
             </div>
             <div ng-if="!player.isActive" style="color:aliceblue" class="marb-30 text-center">
-                <span class="button btn-start " style="background-color:red;color:wheat">Not Active</span>
+                <span class="button button-block " style="background-color:red;color:wheat">Not Active</span>
             </div>
             <div ng-if="player.isDealer" style="color:aliceblue" class="marb-30 text-center">
-                <span class="button btn-start " style="background-color:orange;color:wheat"> Dealer</span>
+                <span class="button button-block " style="background-color:orange;color:wheat"> Dealer</span>
             </div>
         </div>
     </ion-content>
