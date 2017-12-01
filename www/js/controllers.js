@@ -32,6 +32,11 @@ angular.module('starter.controllers', [])
       if (!$scope.player) {
         $state.go("tab");
       }
+      if (data.isCheck) {
+        $scope.isCheck = true;
+      } else {
+        $scope.isCheck = false;
+      }
     }
 
     $scope.raise = function () {
@@ -50,7 +55,7 @@ angular.module('starter.controllers', [])
       $scope.player.isTurn = false;
       apiService.moveTurn(function (data) {});
     };
-    $scope.foldPlayer = function () {
+    $scope.fold = function () {
       $scope.player.isTurn = false;
       apiService.fold(function (data) {});
     };

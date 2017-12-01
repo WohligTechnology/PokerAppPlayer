@@ -17,22 +17,22 @@
             </div>
             <div class="row marb20">
                 <div class="col-25 text-center">
-                    <button class="button btn-start" ng-disabled="!player.isTurn || remainingPlayer<=1" ng-click="moveTurn()">All In</button>
+                    <button class="button btn-start" ng-disabled="!player.isTurn || remainingPlayer<=1" ng-click="allIn()">All In</button>
                 </div>
 
                 <div class="col-25 text-center">
-                    <button class="button btn-start" ng-disabled="!player.isTurn || remainingPlayer<=1" ng-click="moveTurn()">Raise</button>
+                    <button class="button btn-start" ng-disabled="!player.isTurn || remainingPlayer<=1" ng-click="raise()">Raise</button>
                 </div>
 
                 <div class="col-25 text-center" ng-if="isCheck">
-                    <button class="button btn-start" ng-disabled="!player.isTurn || remainingPlayer<=1" ng-click="moveTurn()">Check</button>
+                    <button class="button btn-start" ng-disabled="!player.isTurn || remainingPlayer<=1" ng-click="check()">Check</button>
                 </div>
                 <div class="col-25 text-center" ng-if="!isCheck">
-                    <button class="button btn-start" ng-disabled="!player.isTurn || remainingPlayer<=1" ng-click="moveTurn()">Call</button>
+                    <button class="button btn-start" ng-disabled="!player.isTurn || remainingPlayer<=1" ng-click="call()">Call</button>
                 </div>
 
                 <div class="col-25 text-center">
-                    <button class="button btn-start" ng-disabled="!player.isTurn || remainingPlayer<=1" ng-click="foldPlayer()">Fold</button>
+                    <button class="button btn-start" ng-disabled="!player.isTurn || remainingPlayer<=1" ng-click="fold()">Fold</button>
                 </div>
             </div>
             <div ng-if="player.isFold" style="color:aliceblue" class="marb-30 text-center">
