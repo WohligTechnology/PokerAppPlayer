@@ -523,12 +523,17 @@ $dark:                            #444 !default;
             position: absolute;
             left: 50%;
             transform: translate(-50%, 0%);
+            width: 100%;
+            overflow: hidden;
+            height: 0px;
         }
 
         card.animatedCard {
             position: absolute;
             left: 50%;
             transform: translate(-50%, 0%);
+            width: 100%;
+            overflow: hidden;
         }
 
         .relative {

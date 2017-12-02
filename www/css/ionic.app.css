@@ -10264,12 +10264,17 @@ body {
 card.animatedCardOpen {
   position: absolute;
   left: 50%;
-  transform: translate(-50%, 0%); }
+  transform: translate(-50%, 0%);
+  width: 100%;
+  overflow: hidden;
+  height: 0px; }
 
 card.animatedCard {
   position: absolute;
   left: 50%;
-  transform: translate(-50%, 0%); }
+  transform: translate(-50%, 0%);
+  width: 100%;
+  overflow: hidden; }
 
 .relative {
   position: relative; }
