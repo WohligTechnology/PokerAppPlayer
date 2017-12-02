@@ -82,4 +82,10 @@ angular.module('starter.controllers', [])
       selectPlayer.setPlayer(currentPlayer);
     };
   })
-  .controller('PlaylistCtrl', function ($scope, $stateParams) {});
+  .controller('PlaylistCtrl', function ($scope, $stateParams) {})
+  .controller('AnimatedCardCtrl', function ($scope, $stateParams, $element, $attr, $timeout) {
+
+    // $ionicGesture.on('dragup', this.onDrag, $element);
+    // $ionicGesture.on('dragend', this.onDragEnd, $element);
+
+  });

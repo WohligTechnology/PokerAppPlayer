@@ -127,69 +127,74 @@ myApp.directive('animatedCard', function ($ionicGesture, $timeout) {
   return {
     restrict: 'E',
     replace: false,
-    scope: {
-      player: "="
-    },
+    scope: true,
     templateUrl: 'templates/directive/animatedCard.html',
-    link: function ($scope, $element, attr) {
-
-      var distanceStart = 0;
+    link: function ($scope, $element, $attr) {
       var distanceDifference = 0;
       var event = {
         gesture: {
           distance: 0
         }
       };
-      $scope.card = attr.card;
+      $scope.card = $attr.card;
       var cardHeight = 300;
       var topMargin = 0;
       var maxDragPercent = 60;
-      $scope.player.dragCss = {};
-      $scope.player.dragCssOpen = {
-        height: "0px"
-      };
-      this.onDrag = function (event) {
-        var upDistance = event.gesture.distance;
-        var amountUp = (cardHeight - upDistance);
-        var dragPercent = upDistance / cardHeight * 100;
-        if (dragPercent < maxDragPercent) {
-          var topPosition = (cardHeight - (2 * upDistance));
-          $scope.player.dragCss.height = amountUp + "px";
-          $scope.player.dragCssOpen.height = upDistance + "px";
-          $scope.player.dragCssOpen.top = (topPosition + topMargin) + "px";
+
+      // this.onDrag = function (event) {
+      //   var upDistance = event.gesture.distance;
+      //   var amountUp = (cardHeight - upDistance);
+      //   var dragPercent = upDistance / cardHeight * 100;
+      //   if (dragPercent < maxDragPercent) {
+      //     var topPosition = (cardHeight - (2 * upDistance));
+      //     $scope.player.dragCss.height = amountUp + "px";
+      //     $scope.player.dragCssOpen.height = upDistance + "px";
+      //     $scope.player.dragCssOpen.top = (topPosition + topMargin) + "px";
+      //     $scope.$apply();
+      //   }
+      // };
+      // this.onDragEnd = function (event) {
+      //   $scope.dragCss.height = cardHeight + "px";
+      //   $scope.dragCssOpen.height = "0px";
+      //   $scope.dragCssOpen.top = cardHeight + topMargin + "px";
+      //   $scope.$apply();
+      // };
+      $timeout(function () {
+        var cardImage = $($element).find("card.animatedCard img").get(0);
+        var cardImageOpen = $($element).find("card.animatedCardOpen img").get(0);
+
+        var parentImage = $($element).find("card.animatedCard").get(0);
+        var parentImageOpen = $($element).find("card.animatedCardOpen").get(0);
+        cardImage.addEventListener('touchstart', function (e) {
+          distanceStart = e.changedTouches[0].clientY;
+        }, false);
+
+        cardImage.addEventListener('touchmove', function (e) {
+          distanceDifference = distanceStart - e.changedTouches[0].clientY;
+          event.gesture.distance = distanceDifference;
+
+          var upDistance = event.gesture.distance;
+          var amountUp = (cardHeight - upDistance);
+          var dragPercent = upDistance / cardHeight * 100;
+          if (dragPercent < maxDragPercent) {
+            var topPosition = (cardHeight - (2 * upDistance));
+            $(parentImage).css("height", amountUp + "px");
+            $(parentImageOpen).css("height", upDistance + "px");
+            $(parentImageOpen).css("top", (topPosition + topMargin) + "px");
+            $scope.$apply();
+          }
+        }, false);
+        cardImage.addEventListener('touchend', function (e) {
+          event.gesture.distance = 0;
+
+          $(parentImage).css("height", cardHeight + "px");
+          $(parentImageOpen).css("height", "0px");
+          $(parentImageOpen).css("top", cardHeight + topMargin + "px");
           $scope.$apply();
-        }
-      };
-      this.onDragEnd = function (event) {
-        $scope.player.dragCss.height = cardHeight + "px";
-        $scope.player.dragCssOpen.height = "0px";
-        $scope.player.dragCssOpen.top = cardHeight + topMargin + "px";
-        $scope.$apply();
-      };
-      if (i === 0) {
-        i++;
-        $timeout(function () {
-          var cardImage = $($element).find("card.animatedCard img").get(0);
-          cardImage.addEventListener('touchstart', function (e) {
-            distanceStart = e.changedTouches[0].clientY;
-          }, false);
 
-          cardImage.addEventListener('touchmove', function (e) {
-            distanceDifference = distanceStart - e.changedTouches[0].clientY;
-            event.gesture.distance = distanceDifference;
-            onDrag(event);
-          }, false);
-          cardImage.addEventListener('touchend', function (e) {
-            event.gesture.distance = 0;
-            onDragEnd(event);
-          }, false);
-        }, 200);
-      }
+        }, false);
+      }, 200);
 
-
-
-      // $ionicGesture.on('dragup', this.onDrag, $element);
-      // $ionicGesture.on('dragend', this.onDragEnd, $element);
 
     }
   };

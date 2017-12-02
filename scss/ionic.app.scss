@@ -539,3 +539,9 @@ $dark:                            #444 !default;
         .relative {
             position: relative;
         }
+
+        pre {
+            white-space: pre-wrap;
+            color: white;
+            background: red;
+        }
