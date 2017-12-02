@@ -536,20 +536,6 @@ $dark:                            #444 !default;
             overflow: hidden;
         }
 
-        card.animatedCardOpen {
-            position: absolute;
-            left: 50%;
-            transform: translate(-50%, 0%);
-            width: 100%;
-        }
-
-        card.animatedCardStack {
-            position: absolute;
-            left: 50%;
-            transform: translate(-50%, 0%);
-            width: 100%;
-        }
-
         .relative {
             position: relative;
         }

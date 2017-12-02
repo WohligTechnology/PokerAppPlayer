@@ -17,10 +17,10 @@
                 <animated-card card="{{player.cards[1]}}" ng-if="player.cards.length > 1"></animated-card>
             </div>
             <div class="col-50" ng-if="isStack.value">
-                <animated-card-stack player="player"></animated-card-stack>
+                <animated-card-stack card="{{player.cards[0]}}" player="player"></animated-card-stack>
             </div>
             <div class="col-50" ng-if="isStack.value">
-                <animated-card-stack player="player"></animated-card-stack>
+                <animated-card-stack card="{{player.cards[1]}}" player="player"></animated-card-stack>
             </div>
         </div>
 
