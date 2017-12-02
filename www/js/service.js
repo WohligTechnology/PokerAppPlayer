@@ -172,7 +172,6 @@ myApp.directive('animatedCard', function ($ionicGesture, $timeout) {
         cardImage.addEventListener('touchmove', function (e) {
           distanceDifference = distanceStart - e.changedTouches[0].clientY;
           event.gesture.distance = distanceDifference;
-
           var upDistance = event.gesture.distance;
           var amountUp = (cardHeight - upDistance);
           var dragPercent = upDistance / cardHeight * 100;
@@ -186,12 +185,10 @@ myApp.directive('animatedCard', function ($ionicGesture, $timeout) {
         }, false);
         cardImage.addEventListener('touchend', function (e) {
           event.gesture.distance = 0;
-
           $(parentImage).css("height", cardHeight + "px");
           $(parentImageOpen).css("height", "0px");
           $(parentImageOpen).css("top", cardHeight + topMargin + "px");
           $scope.$apply();
-
         }, false);
       }, 200);
 
