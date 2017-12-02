@@ -140,25 +140,6 @@ myApp.directive('animatedCard', function ($ionicGesture, $timeout) {
       var cardHeight = 300;
       var topMargin = 0;
       var maxDragPercent = 60;
-
-      // this.onDrag = function (event) {
-      //   var upDistance = event.gesture.distance;
-      //   var amountUp = (cardHeight - upDistance);
-      //   var dragPercent = upDistance / cardHeight * 100;
-      //   if (dragPercent < maxDragPercent) {
-      //     var topPosition = (cardHeight - (2 * upDistance));
-      //     $scope.player.dragCss.height = amountUp + "px";
-      //     $scope.player.dragCssOpen.height = upDistance + "px";
-      //     $scope.player.dragCssOpen.top = (topPosition + topMargin) + "px";
-      //     $scope.$apply();
-      //   }
-      // };
-      // this.onDragEnd = function (event) {
-      //   $scope.dragCss.height = cardHeight + "px";
-      //   $scope.dragCssOpen.height = "0px";
-      //   $scope.dragCssOpen.top = cardHeight + topMargin + "px";
-      //   $scope.$apply();
-      // };
       $timeout(function () {
         var cardImage = $($element).find("card.animatedCard img").get(0);
         var cardImageOpen = $($element).find("card.animatedCardOpen img").get(0);
