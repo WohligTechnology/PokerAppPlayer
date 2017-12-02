@@ -9876,7 +9876,7 @@ body {
   -webkit-overflow-scrolling: touch; }
 
 .bgImg {
-  background-image: url(../img/bg-added.jpg);
+  background-image: url(../img/background.jpg);
   width: auto;
   height: auto;
   background-size: cover;
@@ -10244,10 +10244,18 @@ body {
   float: right; }
 
 .winnersHead {
-  font-size: 30px;
   color: white;
-  text-align: center;
-  padding-bottom: 20px; }
+  padding: 15px 0;
+  margin: 0;
+  position: relative;
+  display: inline-block; }
+  .winnersHead img {
+    width: 220px; }
+  .winnersHead span {
+    position: absolute;
+    top: 18px;
+    right: 16px;
+    font-size: 38px; }
 
 .item.item-input input.passwordtext {
   font-size: 20px;
@@ -10283,3 +10291,33 @@ pre {
   white-space: pre-wrap;
   color: white;
   background: red; }
+
+.player-all {
+  height: 100vh;
+  position: relative; }
+
+.cards-two {
+  height: 300px; }
+
+.bottom-cards {
+  width: 100%;
+  position: absolute;
+  bottom: 0; }
+
+.button {
+  background: linear-gradient(#f8cd32, #c68139);
+  font-size: 22px;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 1px;
+  border: 3px solid #d2c1ae;
+  border-radius: 10px;
+  max-width: 150px;
+  padding: 1px 20px;
+  -webkit-box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.5), inset 0 0 8px rgba(0, 0, 0, 0.85);
+  -moz-box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.5), inset 0 0 8px rgba(0, 0, 0, 0.85);
+  -o-box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.5), inset 0 0 8px rgba(0, 0, 0, 0.85);
+  box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.5), inset 0 0 8px rgba(0, 0, 0, 0.85); }
+  .button:hover {
+    color: #fff; }
