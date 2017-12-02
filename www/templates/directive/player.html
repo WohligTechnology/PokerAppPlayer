@@ -1,19 +1,25 @@
 <div style="position:relative;">
-    <label class="toggle">
-        <input type="checkbox" ng-modal="isStack">
-        <div class="track">
-            <div class="handle"></div>
-        </div>
-    </label>
+    <li class="item item-toggle">
+        Stack
+        <label class="toggle toggle-assertive">
+            <input type="checkbox" ng-model="isStack.value">
+            <div class="track">
+                <div class="handle"></div>
+            </div>
+        </label>
+    </li>
     <div class="text-center" ng-class="{'player-turn':player.isTurn,'not-active':!player.isActive,'player-fold':player.isFold}">
         <div class="row">
-            <div class="col-50">
+            <div class="col-50" ng-if="!isStack.value">
                 <animated-card card="{{player.cards[0]}}" ng-if="player.cards.length > 0"></animated-card>
             </div>
-            <div class="col-50">
+            <div class="col-50" ng-if="!isStack.value">
                 <animated-card card="{{player.cards[1]}}" ng-if="player.cards.length > 1"></animated-card>
             </div>
-            <div class="col-100">
+            <div class="col-50" ng-if="isStack.value">
+                <animated-card-stack player="player"></animated-card-stack>
+            </div>
+            <div class="col-50" ng-if="isStack.value">
                 <animated-card-stack player="player"></animated-card-stack>
             </div>
         </div>

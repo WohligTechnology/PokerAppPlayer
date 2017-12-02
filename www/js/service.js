@@ -118,7 +118,11 @@ myApp.directive('player', function ($ionicGesture) {
       player: "=ngPlayer"
     },
     templateUrl: 'templates/directive/player.html',
-    link: function ($scope, $element, attr) {}
+    link: function ($scope, $element, attr) {
+      $scope.isStack = {
+        value: true
+      };
+    }
   };
 });
 
