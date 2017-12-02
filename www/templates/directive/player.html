@@ -1,11 +1,20 @@
 <div style="position:relative;">
+    <label class="toggle">
+        <input type="checkbox" ng-modal="isStack">
+        <div class="track">
+            <div class="handle"></div>
+        </div>
+    </label>
     <div class="text-center" ng-class="{'player-turn':player.isTurn,'not-active':!player.isActive,'player-fold':player.isFold}">
         <div class="row">
-            <div class="col-50 ">
+            <div class="col-50">
                 <animated-card card="{{player.cards[0]}}" ng-if="player.cards.length > 0"></animated-card>
             </div>
-            <div class="col-50 ">
+            <div class="col-50">
                 <animated-card card="{{player.cards[1]}}" ng-if="player.cards.length > 1"></animated-card>
+            </div>
+            <div class="col-100">
+                <animated-card-stack player="player"></animated-card-stack>
             </div>
         </div>
 
