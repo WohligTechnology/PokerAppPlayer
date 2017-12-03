@@ -120,7 +120,10 @@ myApp.directive('player', function ($ionicGesture) {
     templateUrl: 'templates/directive/player.html',
     link: function ($scope, $element, attr) {
       $scope.isStack = {
-        value: true
+        value: false
+      };
+      $scope.toggleStack = function () {
+        $scope.isStack.value = !$scope.isStack.value;
       };
     }
   };
