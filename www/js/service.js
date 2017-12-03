@@ -211,6 +211,17 @@ myApp.directive('animatedCardStack', function ($ionicGesture) {
         height: "0px"
       };
       this.onDrag = function (event) {
+        if ($scope.player.dragCss) {
+          $scope.player.dragCss = {
+            width: "100%",
+            overflow: "hidden",
+          };
+          $scope.player.dragCssOpen = {
+            width: "100%",
+            overflow: "hidden",
+            height: "0px"
+          };
+        }
         var upDistance = event.gesture.distance;
         var amountUp = (cardHeight - upDistance);
         var dragPercent = upDistance / cardHeight * 100;
@@ -223,6 +234,17 @@ myApp.directive('animatedCardStack', function ($ionicGesture) {
         }
       };
       this.onDragEnd = function (event) {
+        if ($scope.player.dragCss) {
+          $scope.player.dragCss = {
+            width: "100%",
+            overflow: "hidden",
+          };
+          $scope.player.dragCssOpen = {
+            width: "100%",
+            overflow: "hidden",
+            height: "0px"
+          };
+        }
         $scope.player.dragCss.height = cardHeight + "px";
         $scope.player.dragCssOpen.height = "0px";
         $scope.player.dragCssOpen.top = cardHeight + topMargin + "px";
