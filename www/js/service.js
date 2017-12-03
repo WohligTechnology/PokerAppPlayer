@@ -211,7 +211,7 @@ myApp.directive('animatedCardStack', function ($ionicGesture) {
         height: "0px"
       };
       this.onDrag = function (event) {
-        if ($scope.player.dragCss) {
+        if (!$scope.player.dragCss) {
           $scope.player.dragCss = {
             width: "100%",
             overflow: "hidden",
@@ -234,7 +234,7 @@ myApp.directive('animatedCardStack', function ($ionicGesture) {
         }
       };
       this.onDragEnd = function (event) {
-        if ($scope.player.dragCss) {
+        if (!$scope.player.dragCss) {
           $scope.player.dragCss = {
             width: "100%",
             overflow: "hidden",
