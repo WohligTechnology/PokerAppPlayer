@@ -1,5 +1,6 @@
-<div style="position:relative;">
-    <li class="item item-toggle">
+<div class="padding-horizontal">
+
+    <!--<li class="item item-toggle">
         Stack
         <label class="toggle toggle-assertive">
             <input type="checkbox" ng-model="isStack.value">
@@ -7,8 +8,11 @@
                 <div class="handle"></div>
             </div>
         </label>
-    </li>
-    <div class="text-center" ng-class="{'player-turn':player.isTurn,'not-active':!player.isActive,'player-fold':player.isFold}">
+    </li>-->
+    <div class="text-center">
+        <button class="button" ng-model="isStack.value"> Stack</button>
+    </div>
+    <div class="text-center bottom-cards" ng-class="{'player-turn':player.isTurn,'not-active':!player.isActive,'player-fold':player.isFold}">
         <div class="row">
             <div class="col-50" ng-if="!isStack.value">
                 <animated-card card="{{player.cards[0]}}" ng-if="player.cards.length > 0"></animated-card>
