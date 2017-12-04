@@ -84,14 +84,14 @@ angular.module('starter.controllers', [])
     io.socket.on("ShowWinner", $scope.showWinner);
 
   })
-  .controller('TabCtrl', function ($scope, $stateParams, selectPlayer, $state) {
+  .controller('TabCtrl', function ($scope, $stateParams, selectPlayer, apiService, $state) {
     $scope.players = ["1", "2", "3", "4", "5", "6", "7", "8"];
-    $scope.currentPlayer = selectPlayer.getPlayer();
-    $scope.selectPlayerNo = function (currentPlayer) {
-      selectPlayer.setPlayer(currentPlayer);
-    };
-    $scope.saveAdminUrl = function () {
-
+    $scope.form = {};
+    $scope.form.adminurl = apiService.getAdminUrl();
+    $scope.form.player = selectPlayer.getPlayer();
+    $scope.saveForm = function () {
+      apiService.saveAdminUrl($scope.form.adminurl);
+      selectPlayer.setPlayer($scope.form.player);
     };
   })
   .controller('PlaylistCtrl', function ($scope, $stateParams) {})

@@ -1,7 +1,12 @@
 <ion-view>
-    <ion-content class="bgImg">
+    <ion-content style="background:black;">
         <div class="list tabSelect player-select">
-
+            <label class="item item-input">
+                <label for="">Adminurl: </label>
+                <input type="text" ng-model="currentPlayer" ng-change="selectPlayerNo(currentPlayer)" placeholder="Enter Password" class="passwordtext">
+            </label>
+        </div>
+        <div class="list tabSelect player-select">
             <label class="item item-input">
                 <label for="">Enter Password: </label>
                 <input type="text" ng-model="currentPlayer" ng-change="selectPlayerNo(currentPlayer)" placeholder="Enter Password" class="passwordtext">
