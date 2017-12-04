@@ -23,6 +23,20 @@ $dark:                            #444 !default;
             -webkit-overflow-scrolling: touch;
         }
         
+        .logo-left.pull-left {
+            position: absolute;
+            left: 20px;
+            top: 5px;
+            width: 80px;
+        }
+        
+        .landing-screen {
+            input,
+            .item-select select {
+                font-size: 1.2em;
+            }
+        }
+        
         .bgImg {
             background-image: url(../img/background.jpg);
             width: auto;
@@ -596,7 +610,7 @@ $dark:                            #444 !default;
         
         .button {
             background: linear-gradient(#f8cd32, #c68139);
-            font-size: 22px;
+            font-size: 20px;
             color: #fff;
             text-transform: uppercase;
             font-weight: 800;
@@ -612,10 +626,11 @@ $dark:                            #444 !default;
             &:hover {
                 color: #fff;
             }
-        }
-        
-        .button {
-            font-size: 20px;
+            &.button-start {
+                background: #fff;
+                color: #000;
+                // box-shadow: none;
+            }
         }
         
         .join-one .cards-two {
@@ -665,4 +680,20 @@ $dark:                            #444 !default;
             text-transform: uppercase;
             color: #fff;
             font-weight: 600;
+        }
+        
+        .active .modal-backdrop-bg {
+            opacity: 0.9;
+        }
+        
+        .modal {
+            background-color: transparent;
+        }
+        
+        @media only screen and (max-width:480px) {
+            .button {
+                font-size: 10px;
+                letter-spacing: 1px;
+                padding: 0px 10px;
+            }
         }
