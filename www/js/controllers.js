@@ -46,15 +46,15 @@ angular.module('starter.controllers', [])
       $scope.player.isTurn = false;
       apiService.raise(function (data) {});
     };
-      //     apiService.allIn(function (data) {
-      //   console.log(data.data);
-      // });
+    //     apiService.allIn(function (data) {
+    //   console.log(data.data);
+    // });
     $scope.allIn = function () {
       $scope.player.isTurn = false;
       apiService.allIn(function (data) {
         console.log(data.data.data.addTurn[0].isAllIn);
-        $scope.allInPlayer= data.data.data.addTurn[0].isAllIn;
-        if($scope.allInPlayer== false){
+        $scope.allInPlayer = data.data.data.addTurn[0].isAllIn;
+        if ($scope.allInPlayer == false) {
 
         }
       });
@@ -89,6 +89,9 @@ angular.module('starter.controllers', [])
     $scope.currentPlayer = selectPlayer.getPlayer();
     $scope.selectPlayerNo = function (currentPlayer) {
       selectPlayer.setPlayer(currentPlayer);
+    };
+    $scope.saveAdminUrl = function () {
+
     };
   })
   .controller('PlaylistCtrl', function ($scope, $stateParams) {})
