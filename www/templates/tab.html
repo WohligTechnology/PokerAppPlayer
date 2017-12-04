@@ -13,7 +13,7 @@
             </select>
         </label>
         <div class="text-center">
-            <button class="button button-default" ng-click="saveForm();">Submit</button>
+            <button class="button button-default" ng-click="saveForm();" ng-disabled="!(form.adminurl && form.player)">Submit</button>
         </div>
     </ion-content>
 </ion-view>
