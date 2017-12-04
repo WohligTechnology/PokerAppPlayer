@@ -1,13 +1,1 @@
 /* Empty. Add your own CSS if you like */
-
-.animatedCardOpen:after {
-    content: '';
-    height: 17px;
-    width: 200px;
-    position: absolute;
-    bottom: 0px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: linear-gradient(#ffffff00, #000000c7);
-    display: block;
-}
