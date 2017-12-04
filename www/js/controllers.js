@@ -46,9 +46,18 @@ angular.module('starter.controllers', [])
       $scope.player.isTurn = false;
       apiService.raise(function (data) {});
     };
+      //     apiService.allIn(function (data) {
+      //   console.log(data.data);
+      // });
     $scope.allIn = function () {
       $scope.player.isTurn = false;
-      apiService.allIn(function (data) {});
+      apiService.allIn(function (data) {
+        console.log(data.data.data.addTurn[0].isAllIn);
+        $scope.allInPlayer= data.data.data.addTurn[0].isAllIn;
+        if($scope.allInPlayer== false){
+
+        }
+      });
     };
     $scope.call = function () {
       $scope.player.isTurn = false;

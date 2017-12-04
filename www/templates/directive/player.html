@@ -23,10 +23,10 @@
             <div class="col-50" ng-if="!isStack.value">
                 <animated-card card="{{player.cards[1]}}" ng-if="player.cards.length > 1"></animated-card>
             </div>
-            <div class="col-50" ng-if="isStack.value">
+            <div class="col-50 join-one" ng-if="isStack.value">
                 <animated-card-stack card="{{player.cards[0]}}" player="player" ng-if="player.cards.length > 0"></animated-card-stack>
             </div>
-            <div class="col-50" ng-if="isStack.value">
+            <div class="col-50 join-two" ng-if="isStack.value">
                 <animated-card-stack card="{{player.cards[1]}}" player="player" ng-if="player.cards.length > 1"></animated-card-stack>
             </div>
         </div>

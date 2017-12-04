@@ -14,14 +14,15 @@ $assertive:                       #ef473a !default;
 $royal:                           #886aea !default;
 $dark:                            #444 !default;
 */
-
+        
+        $assertive: #c30101 !default;
         // The path for our ionicons font files, relative to the built CSS in www/css
         $ionicons-font-path: "../lib/ionic/fonts" !default; // Include all of Ionic
         @import "www/lib/ionic/scss/ionic";
         body {
             -webkit-overflow-scrolling: touch;
         }
-
+        
         .bgImg {
             background-image: url(../img/background.jpg);
             width: auto;
@@ -30,23 +31,23 @@ $dark:                            #444 !default;
             background-repeat: no-repeat;
             background-position: center right;
         }
-
+        
         .mar5 {
             margin-top: 5%;
         }
-
+        
         .centerDiv {
             height: 100vh;
             position: relative;
         }
-
+        
         .centerRow {
             position: absolute;
             top: 50%;
             transform: translate(-50%, -50%);
             left: 50%;
         }
-
+        
         .buttonpos {
             // position: absolute;
             // bottom: 1%;
@@ -62,7 +63,7 @@ $dark:                            #444 !default;
                 color: red;
             }
         }
-
+        
         .cardimg1 {
             width: 80%;
             margin: 0 auto;
@@ -71,7 +72,7 @@ $dark:                            #444 !default;
                 width: 100%;
             }
         }
-
+        
         .cardimg {
             margin: 30% auto;
             width: 60%;
@@ -80,7 +81,7 @@ $dark:                            #444 !default;
                 width: 100%;
             }
         }
-
+        
         .table-border {
             border: 3px solid #fff; // height: 180px;
             // width: 180px;
@@ -90,7 +91,7 @@ $dark:                            #444 !default;
             width: 100%;
             height: 200px;
         }
-
+        
         .platform-android .table-border {
             border: 3px solid #fff;
             height: 100px;
@@ -98,7 +99,7 @@ $dark:                            #444 !default;
             background-color: transparent!important;
             display: table!important;
         }
-
+        
         .platform-ios .table-border {
             border: 3px solid #fff;
             height: 100px;
@@ -106,12 +107,12 @@ $dark:                            #444 !default;
             background-color: transparent!important;
             display: table!important;
         }
-
+        
         .platform-ipad .table-border {
             height: 180px;
             width: 180px;
         }
-
+        
         .dis-cell {
             display: table-cell;
             vertical-align: middle;
@@ -129,35 +130,35 @@ $dark:                            #444 !default;
             //     background-color: red;
             // }
         }
-
+        
         .platform-ios .dis-cell {
             h2 {
                 font-size: 20px!important;
             }
         }
-
+        
         .platform-android .dis-cell {
             h2 {
                 font-size: 20px!important;
             }
         }
-
+        
         .mar-t {
             margin-top: 20%;
         }
-
+        
         .btn-start {
             font-size: 25px;
             padding: 0px 20px;
             margin-top: 30px;
             width: 300px;
         }
-
+        
         .platform-ipad .btn-start {
-            padding: 10px 30px;
+            padding: 10px 25px;
             font-size: 30px;
         }
-
+        
         .removedpopup {
             h3 {
                 img {
@@ -214,7 +215,7 @@ $dark:                            #444 !default;
                 }
             }
         }
-
+        
         .platform-ipad .removedpopup {
             h3 {
                 img {
@@ -271,7 +272,7 @@ $dark:                            #444 !default;
                 }
             }
         }
-
+        
         .leaveApp {
             h3 {
                 img {
@@ -319,31 +320,30 @@ $dark:                            #444 !default;
                 }
             }
         }
-
+        
         .players {
-            img {}
             h2 {
                 color: white;
                 margin-bottom: 20px!important;
                 font-size: 20px;
             }
         }
-
+        
         .platform-ipad .players {
             margin: 10px;
             h2 {
                 font-size: 30px;
             }
         }
-
+        
         .playerimg {
             width: 60%;
         }
-
+        
         .selected {
             border: 3px solid orangered;
         }
-
+        
         .playerimg {
             width: 100%;
             img {
@@ -354,15 +354,15 @@ $dark:                            #444 !default;
                 margin-bottom: 20px!important;
             }
         }
-
+        
         .dummydiv {
             height: 10px;
         }
-
+        
         .rel {
             position: relative;
         }
-
+        
         .playerfold {
             color: white;
             position: absolute;
@@ -372,13 +372,13 @@ $dark:                            #444 !default;
             left: 50%;
             font-size: 20px;
         }
-
+        
         .platform-ipad .playerfold {
             font-size: 26px;
             padding: 10px 20px;
             top: 40%;
         }
-
+        
         .cardbtn {
             position: absolute;
             transform: translate(-50%, -50%);
@@ -389,7 +389,7 @@ $dark:                            #444 !default;
                 width: 100%;
             }
         }
-
+        
         .platform-ipad .cardbtn {
             button {
                 font-size: 30px;
@@ -398,35 +398,35 @@ $dark:                            #444 !default;
                 width: 100%;
             }
         }
-
+        
         .card1-top {
             top: 36%;
             left: 30%;
         }
-
+        
         .platform-ipad .card1-top {
             top: 44%;
             left: 30%;
         }
-
+        
         .card2-top {
             top: 36%;
             left: 80%;
         }
-
+        
         .platform-ipad .card2-top {
             top: 44%;
             right: 2%;
         }
-
+        
         .back-color {
             background-color: rgba(248, 248, 248, 0.7) !important;
         }
-
+        
         .backgroundcl {
             background: red;
         }
-
+        
         .platform-ipad .player-select {
             width: 50%;
             display: block;
@@ -444,7 +444,7 @@ $dark:                            #444 !default;
                 font-size: 24px!important;
             }
         }
-
+        
         .player-select {
             width: 60%;
             display: block;
@@ -464,7 +464,7 @@ $dark:                            #444 !default;
                 direction: ltr!important;
             }
         }
-
+        
         @media only screen and (max-width:800px) and (min-width:1280px) {
             .table-border {
                 border: 3px solid #fff; // height: 180px;
@@ -476,19 +476,19 @@ $dark:                            #444 !default;
                 height: 200px;
             }
         }
-
+        
         .floatright {
             float: right;
         }
-
+        
         .marb20 {
             margin-bottom: 20px;
         }
-
+        
         .tabSelect {
             margin: 50px auto!important;
         }
-
+        
         .changeTab {
             button {
                 color: white;
@@ -496,7 +496,7 @@ $dark:                            #444 !default;
                 float: right;
             }
         }
-
+        
         .winnersHead {
             color: white;
             padding: 15px 0;
@@ -506,38 +506,61 @@ $dark:                            #444 !default;
             img {
                 width: 220px;
             }
-            span {
+            span.player-number {
                 position: absolute;
                 top: 18px;
                 right: 16px;
                 font-size: 38px;
             }
+            span.dealer {
+                position: absolute;
+                top: 12px;
+                right: -18px;
+                font-size: 24px;
+                background: #c30101;
+                border-radius: 50%;
+                padding: 2px 8px;
+            }
         }
-
+        
         .item.item-input input.passwordtext {
             font-size: 20px;
             color: white;
             padding-left: 20px;
         }
-
+        
         .p10 {
             padding: 10px;
         }
-
+        
         .winner-section {
             background: rgba(220, 117, 0, 0.44);
             border-radius: 20px;
         }
-
+        
         card.animatedCardOpen {
             position: absolute;
             left: 50%;
             transform: translate(-50%, 0%);
-            width: 100%;
+            width: 200px;
             overflow: hidden;
             height: 0px;
+            -moz-box-shadow: 5px 5px rgba(0, 0, 0, 0.7);
+            -webkit-box-shadow: 5px 5px rgba(0, 0, 0, 0.7);
+            box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.7);
+            &:after {
+                content: '';
+                height: 15px;
+                width: 200px;
+                position: absolute;
+                bottom: 0px;
+                left: 50%;
+                transform: translateX(-50%);
+                background: linear-gradient(rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.55));
+                display: block;
+            }
         }
-
+        
         card.animatedCard {
             position: absolute;
             left: 50%;
@@ -545,32 +568,32 @@ $dark:                            #444 !default;
             width: 100%;
             overflow: hidden;
         }
-
+        
         .relative {
             position: relative;
         }
-
+        
         pre {
             white-space: pre-wrap;
             color: white;
             background: red;
         }
-
+        
         .player-all {
             height: 100vh;
             position: relative;
         }
-
+        
         .cards-two {
             height: 300px;
         }
-
+        
         .bottom-cards {
             width: 100%;
             position: absolute;
             bottom: 0;
         }
-
+        
         .button {
             background: linear-gradient(#f8cd32, #c68139);
             font-size: 22px;
@@ -590,7 +613,56 @@ $dark:                            #444 !default;
                 color: #fff;
             }
         }
-
+        
         .button {
             font-size: 20px;
+        }
+        
+        .join-one .cards-two {
+            float: right;
+            width: 200px;
+            margin-right: -60px;
+        }
+        
+        .join-two .cards-two {
+            float: left;
+            width: 200px;
+            margin-left: -60px;
+        }
+        
+        .player-not-active {
+            justify-content: center;
+            display: flex;
+            align-items: center;
+            margin: 0 auto;
+            flex: 1;
+            color: $assertive;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(246, 246, 246, 0.75);
+            span {
+                font-size: 5em;
+                font-weight: 100;
+                text-transform: uppercase;
+                letter-spacing: 10px;
+                border-bottom: 8px solid $assertive;
+                border-top: 8px solid $assertive;
+                padding: 40px 25px;
+                display: inline-block;
+            }
+        }
+        
+        .all-in {
+            background: linear-gradient(#ffe22d, #f40300);
+            font-size: 35px;
+            margin: 20px 0;
+            letter-spacing: 7px;
+            line-height: 1.6;
+            width: 100%;
+            text-transform: uppercase;
+            color: #fff;
+            font-weight: 600;
         }
