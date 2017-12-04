@@ -2,18 +2,18 @@
     <ion-content style="background:black;">
         <div class="list tabSelect player-select">
             <label class="item item-input">
-                <label for="">Adminurl: </label>
-                <input type="text" ng-model="currentPlayer" ng-change="selectPlayerNo(currentPlayer)" placeholder="Enter Password" class="passwordtext">
+                <label for="">Admin Url: </label>
+                <input type="text" ng-model="form.adminurl" placeholder="Enter Password" class="passwordtext">
             </label>
         </div>
         <div class="list tabSelect player-select">
             <label class="item item-input">
-                <label for="">Enter Password: </label>
-                <input type="text" ng-model="currentPlayer" ng-change="selectPlayerNo(currentPlayer)" placeholder="Enter Password" class="passwordtext">
+                <label for="">Enter Player No.: </label>
+                <input type="text" ng-model="form.player" placeholder="Enter Password" class="passwordtext">
             </label>
         </div>
         <div class="marb-30 text-center">
-            <button class="button btn-start" ui-sref='player'>Submit</button>
+            <button class="button btn-start" ng-click="saveForm();">Submit</button>
         </div>
     </ion-content>
 </ion-view>

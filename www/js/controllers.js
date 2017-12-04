@@ -92,6 +92,7 @@ angular.module('starter.controllers', [])
     $scope.saveForm = function () {
       apiService.saveAdminUrl($scope.form.adminurl);
       selectPlayer.setPlayer($scope.form.player);
+      window.location.href = window.location.origin;
     };
   })
   .controller('PlaylistCtrl', function ($scope, $stateParams) {})
