@@ -562,6 +562,7 @@ $dark:                            #444 !default;
             -moz-box-shadow: 5px 5px rgba(0, 0, 0, 0.7);
             -webkit-box-shadow: 5px 5px rgba(0, 0, 0, 0.7);
             box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.7);
+            transition: all linear 200ms;
             &:after {
                 content: '';
                 height: 15px;
@@ -581,6 +582,7 @@ $dark:                            #444 !default;
             transform: translate(-50%, 0%);
             width: 100%;
             overflow: hidden;
+            transition: all linear 200ms;
         }
         
         .relative {
@@ -618,6 +620,7 @@ $dark:                            #444 !default;
             border: 3px solid #d2c1ae;
             border-radius: 10px;
             max-width: 150px;
+            margin: 0 auto;
             padding: 1px 20px;
             -webkit-box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.5), inset 0 0 8px rgba(0, 0, 0, 0.85);
             -moz-box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.5), inset 0 0 8px rgba(0, 0, 0, 0.85);
@@ -657,7 +660,7 @@ $dark:                            #444 !default;
             bottom: 0;
             left: 0;
             right: 0;
-            background: rgba(246, 246, 246, 0.75);
+            background: rgba(246, 246, 246, 0.85);
             span {
                 font-size: 5em;
                 font-weight: 100;
@@ -690,10 +693,149 @@ $dark:                            #444 !default;
             background-color: transparent;
         }
         
+        .is-Active {
+            color: #fff;
+            background: #33e966;
+            border-radius: 8px;
+            max-width: 170px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 22px;
+            font-weight: 600;
+            padding: 15px;
+            margin: 0 auto;
+            animation-name: isactive;
+            animation-duration: 1.5s;
+            animation-timing-function: ease;
+            animation-iteration-count: infinite;
+        }
+        
+        #MyRect {
+            stroke: $balanced;
+            stroke-width: 6px;
+            fill: transparent;
+            height: 97.5vh;
+            width: 98%;
+            -moz-transition: all 1.2s cubic-bezier(0.19, 1, 0.22, 1);
+            -o-transition: all 1.2s cubic-bezier(0.19, 1, 0.22, 1);
+            -webkit-transition: all 1.2s cubic-bezier(0.19, 1, 0.22, 1);
+            transition: all 1.2s cubic-bezier(0.19, 1, 0.22, 1);
+            animation-name: isactive;
+            animation-duration: 1.2s;
+            animation-timing-function: ease;
+            animation-iteration-count: infinite;
+        }
+        
+        #made {
+            position: fixed;
+        }
+        
+        @keyframes isactive {
+            0% {
+                stroke-dasharray: 35, 217;
+                stroke-dashoffset: 20;
+            }
+            100% {
+                stroke-dasharray: 35, 300;
+                stroke-dashoffset: 20;
+            }
+        }
+        
+        // @keyframes isactive {
+        //     0% {
+        //         background-color: $balanced;
+        //     }
+        //     30% {
+        //         background-color: $assertive;
+        //     }
+        //     60% {
+        //         background-color: $balanced;
+        //     }
+        //     90% {
+        //         background-color: $assertive;
+        //     }
+        //     100% {
+        //         background-color: $balanced;
+        //     }
+        // }
+        @media screen and (max-device-width: 750px) and (orientation: landscape) {
+            .player-not-active {
+                font-size: 2em;
+                font-weight: 100;
+                padding: 15px 25px;
+            }
+            .button {
+                font-size: 10px;
+                letter-spacing: 1px;
+                padding: 0px 0px;
+                line-height: 1;
+                min-height: 35px;
+            }
+            .cards-two {
+                zoom: 0.35;
+            }
+            .winnersHead {
+                padding: 8px 0 0;
+                img {
+                    width: 140px;
+                }
+                span.dealer {
+                    top: 3px;
+                    right: -14px;
+                    font-size: 16px;
+                    padding: 2px 6px;
+                }
+                span.player-number {
+                    top: 10px;
+                    right: 11px;
+                    font-size: 21px;
+                }
+            }
+            .logo-left.pull-left {
+                left: 20px;
+                top: 5px;
+                width: 42px;
+            }
+            .mobile-cards img {
+                height: 60px !important;
+            }
+            .marb20 {
+                margin-bottom: 0;
+            }
+        }
+        
         @media only screen and (max-width:480px) {
             .button {
                 font-size: 10px;
                 letter-spacing: 1px;
-                padding: 0px 10px;
+                padding: 0px 0px;
+                line-height: 1;
+                min-height: 35px;
+            }
+            .player-not-active {
+                font-size: 2em;
+                font-weight: 100;
+                padding: 15px 25px;
+            }
+            .cards-two {
+                zoom: 0.5;
+            }
+            .winnersHead {
+                img {
+                    width: 140px;
+                }
+                span.player-number {
+                    top: 18px;
+                    right: 12px;
+                    font-size: 21px;
+                }
+            }
+            .logo-left.pull-left {
+                left: 20px;
+                top: 5px;
+                width: 50px;
+            }
+            .mobile-cards img {
+                height: 80px !important;
             }
         }
