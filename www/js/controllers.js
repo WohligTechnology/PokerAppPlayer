@@ -3,9 +3,9 @@ var winnerCtrlSocket = {};
 
 angular.module('starter.controllers', [])
 
-  .controller('AppCtrl', function ($scope, $ionicModal, $timeout) {})
+.controller('AppCtrl', function ($scope, $ionicModal, $timeout) {})
 
-  .controller('PlayerCtrl', function ($scope, $stateParams, selectPlayer, apiService, $interval, $state) {
+.controller('PlayerCtrl', function ($scope, $stateParams, selectPlayer, apiService, $interval, $state, $ionicModal) {
 
     io.socket.off("Update", winnerCtrlSocket.update);
 
@@ -46,18 +46,9 @@ angular.module('starter.controllers', [])
       $scope.player.isTurn = false;
       apiService.raise(function (data) {});
     };
-    //     apiService.allIn(function (data) {
-    //   console.log(data.data);
-    // });
     $scope.allIn = function () {
       $scope.player.isTurn = false;
-      apiService.allIn(function (data) {
-        console.log(data.data.data.addTurn[0].isAllIn);
-        $scope.allInPlayer = data.data.data.addTurn[0].isAllIn;
-        if ($scope.allInPlayer == false) {
-
-        }
-      });
+      apiService.allIn(function (data) {});
     };
     $scope.call = function () {
       $scope.player.isTurn = false;
@@ -71,14 +62,36 @@ angular.module('starter.controllers', [])
       $scope.player.isTurn = false;
       apiService.fold(function (data) {});
     };
+    $ionicModal.fromTemplateUrl('templates/winner.html', {
+      scope: $scope,
+      animation: 'slide-in-up'
+    }).then(function (modal) {
+      $scope.modal = modal;
+    });
 
     $scope.showWinner = function (data) {
+      $scope.modal.show();
       console.log(data);
-      console.log("Show Winner Called");
+      console.log(selectPlayer.getPlayer());
+      var isWinner = _.find(data.data, function (n) {
+        return n.playerNo == selectPlayer.getPlayer();
+      });
+      if(isWinner) {
+        console.log("User is Winner");
+        $scope.isWinner="Winner";
+      } else {
+         $scope.isWinner="Loser";
+        console.log("User is Loser");
+      }
     };
-
+    console.log($scope.showWinner);
     $scope.removeWinner = function () {
       console.log("Remove Winner Called");
+      $scope.modal.hide();
+    };
+
+    $scope.closeModal = function () {
+      $scope.modal.hide();
     };
 
     io.socket.on("ShowWinner", $scope.showWinner);
