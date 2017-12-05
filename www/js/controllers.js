@@ -3,9 +3,9 @@ var winnerCtrlSocket = {};
 
 angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function ($scope, $ionicModal, $timeout) {})
+  .controller('AppCtrl', function ($scope, $ionicModal, $timeout) {})
 
-.controller('PlayerCtrl', function ($scope, $stateParams, selectPlayer, apiService, $interval, $state, $ionicModal) {
+  .controller('PlayerCtrl', function ($scope, $stateParams, selectPlayer, apiService, $interval, $state, $ionicModal) {
 
     io.socket.off("Update", winnerCtrlSocket.update);
 
@@ -70,23 +70,20 @@ angular.module('starter.controllers', [])
     });
 
     $scope.showWinner = function (data) {
-      $scope.modal.show();
-      console.log(data);
-      console.log(selectPlayer.getPlayer());
-      var isWinner = _.find(data.data, function (n) {
-        return n.playerNo == selectPlayer.getPlayer();
-      });
-      if(isWinner) {
-        console.log("User is Winner");
-        $scope.isWinner="Winner";
-      } else {
-         $scope.isWinner="Loser";
-        console.log("User is Loser");
+      if (!($scope.player.isFold || !$scope.player.isActive)) {
+        $scope.modal.show();
+        var isWinner = _.find(data.data, function (n) {
+          return n.playerNo == selectPlayer.getPlayer();
+        });
+        if (isWinner) {
+          $scope.isWinner = "You Won";
+        } else {
+          $scope.isWinner = "You Lose";
+        }
       }
+
     };
-    console.log($scope.showWinner);
     $scope.removeWinner = function () {
-      console.log("Remove Winner Called");
       $scope.modal.hide();
     };
 
