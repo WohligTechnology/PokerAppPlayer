@@ -10431,10 +10431,10 @@ pre {
   fill: transparent;
   height: 97.5vh;
   width: 98%;
-  -moz-transition: all 1.2s cubic-bezier(0.19, 1, 0.22, 1);
-  -o-transition: all 1.2s cubic-bezier(0.19, 1, 0.22, 1);
-  -webkit-transition: all 1.2s cubic-bezier(0.19, 1, 0.22, 1);
-  transition: all 1.2s cubic-bezier(0.19, 1, 0.22, 1);
+  -moz-transition: all 1.2s linear;
+  -o-transition: all 1.2s linear;
+  -webkit-transition: all 1.2s linear;
+  transition: all 1.2s linear;
   animation-name: isactive;
   animation-duration: 1.2s;
   animation-timing-function: ease;
@@ -10445,10 +10445,13 @@ pre {
 
 @keyframes isactive {
   0% {
-    stroke-dasharray: 35, 217;
+    stroke-dasharray: 20, 150;
+    stroke-dashoffset: 20; }
+  50% {
+    stroke-dasharray: 20, 250;
     stroke-dashoffset: 20; }
   100% {
-    stroke-dasharray: 35, 300;
+    stroke-dasharray: 20, 0;
     stroke-dashoffset: 20; } }
 
 @media screen and (max-device-width: 750px) and (orientation: landscape) {
