@@ -81,7 +81,6 @@ angular.module('starter.controllers', [])
           $scope.isWinner = "You Lose";
         }
       }
-
     };
     $scope.removeWinner = function () {
       $scope.modal.hide();
