@@ -37,6 +37,18 @@ myApp.factory('apiService', function ($http, $q, $timeout) {
       });
 
     },
+    call: function (callback) {
+      $http.post(adminurl + 'Player/call').then(function (data) {
+        callback(data);
+      });
+
+    },
+    check: function (callback) {
+      $http.post(adminurl + 'Player/check').then(function (data) {
+        callback(data);
+      });
+
+    },
     fold: function (callback) {
       $http.post(adminurl + 'Player/fold').then(function (data) {
         callback(data);

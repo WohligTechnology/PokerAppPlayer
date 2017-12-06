@@ -52,11 +52,11 @@ angular.module('starter.controllers', [])
     };
     $scope.call = function () {
       $scope.player.isTurn = false;
-      apiService.moveTurn(function (data) {});
+      apiService.call(function (data) {});
     };
     $scope.check = function () {
       $scope.player.isTurn = false;
-      apiService.moveTurn(function (data) {});
+      apiService.check(function (data) {});
     };
     $scope.fold = function () {
       $scope.player.isTurn = false;
@@ -81,7 +81,6 @@ angular.module('starter.controllers', [])
           $scope.isWinner = "You Lose";
         }
       }
-
     };
     $scope.removeWinner = function () {
       $scope.modal.hide();
