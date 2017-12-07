@@ -178,21 +178,26 @@ myApp.directive('animatedCard', function ($ionicGesture, $timeout) {
         cardImage.addEventListener('touchmove', function (e) {
           distanceDifference = distanceStart - e.changedTouches[0].clientY;
           event.gesture.distance = distanceDifference;
-          var upDistance = event.gesture.distance;
+          var upDistance = event.gesture.distance * -1;
           var amountUp = (cardHeight - upDistance);
-          var dragPercent = upDistance / cardHeight * 100;
-          if (dragPercent < maxDragPercent) {
-            var topPosition = (cardHeight - (2 * upDistance));
-            $(parentImage).css("height", amountUp + "px");
-            $(parentImageOpen).css("height", upDistance + "px");
-            $(parentImageOpen).css("top", (topPosition + topMargin) + "px");
-            $scope.$apply();
+          if (upDistance >= 0) {
+            var dragPercent = upDistance / cardHeight * 100;
+            if (dragPercent < maxDragPercent) {
+              var topPosition = (cardHeight - (1 * upDistance));
+              $(parentImage).css("height", amountUp + "px");
+              $(parentImage).css("top", upDistance + "px");
+              $(parentImageOpen).css("height", upDistance + "px");
+              $(parentImageOpen).css("top", (topPosition + topMargin) + "px");
+              $scope.$apply();
+            }
           }
+
         }, false);
         cardImage.addEventListener('touchend', function (e) {
           event.gesture.distance = 0;
           $(parentImage).css("height", cardHeight + "px");
           $(parentImageOpen).css("height", "0px");
+          $(parentImage).css("top", 0 + "px");
           $(parentImageOpen).css("top", cardHeight + topMargin + "px");
           $scope.$apply();
         }, false);
