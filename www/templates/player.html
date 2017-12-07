@@ -16,12 +16,12 @@
                     <span class="dealer" ng-if="player.isDealer">D</span>
                 </h2>
             </div>
-            <div class="row text-center mobile-cards" ng-click='youwin()'>
+            <div class="row text-center mobile-cards" on-tap='youwin()'>
                 <div class="col-20" ng-repeat='card in communityCards track by $index' ng-if="!card.isBurn">
                     <community ng-community-card="card"></community>
                 </div>
             </div>
-            <div class="all-in text-center" ng-if="player.isAllIn" ng-click="showWinner()">
+            <div class="all-in text-center" ng-if="player.isAllIn" on-tap="showWinner()">
                 All In
             </div>
             <div class="all-in text-center" ng-if="player.isFold">
@@ -33,14 +33,14 @@
             <div class="row" ng-if="!(player.isFold || player.isAllIn)">
                 <div class="col-20 text-center">
                     <div class="padding-right">
-                        <button class="button button-block" ng-disabled="!player.isTurn || remainingPlayer<=1" ng-click="allIn()">
+                        <button class="button button-block" ng-disabled="!player.isTurn || remainingPlayer<=1" on-tap="allIn()">
                             All In
                         </button>
                     </div>
                 </div>
                 <div class="col-20 text-center">
                     <div class="padding-right">
-                        <button class="button button-block" ng-disabled="!player.isTurn || remainingPlayer<=1" ng-click="raise()">
+                        <button class="button button-block" ng-disabled="!player.isTurn || remainingPlayer<=1" on-tap="raise()">
                             Raise
                         </button>
                     </div>
@@ -54,19 +54,19 @@
                 </div>
                 <div class="col-20 text-center">
                     <div class="padding-right" ng-if="isCheck">
-                        <button class="button button-block" ng-disabled="!player.isTurn || remainingPlayer<=1" ng-click="check()">
+                        <button class="button button-block" ng-disabled="!player.isTurn || remainingPlayer<=1" on-tap="check()">
                             Check
                         </button>
                     </div>
                     <div class="padding-right" ng-if="!isCheck">
-                        <button class="button button-block" ng-disabled="!player.isTurn || remainingPlayer<=1" ng-click="call()">
+                        <button class="button button-block" ng-disabled="!player.isTurn || remainingPlayer<=1" on-tap="call()">
                             Call
                         </button>
                     </div>
                 </div>
                 <div class="col-20 text-center">
                     <div>
-                        <button class="button button-block" ng-disabled="!player.isTurn || remainingPlayer<=1" ng-click="fold()">
+                        <button class="button button-block" ng-disabled="!player.isTurn || remainingPlayer<=1" on-tap="fold()">
                             Fold</button>
                     </div>
                 </div>
