@@ -10293,11 +10293,7 @@ card.animatedCardOpen {
   transform: translate(-50%, 0%);
   width: 200px;
   overflow: hidden;
-  height: 0px;
-  -moz-box-shadow: 5px 5px rgba(0, 0, 0, 0.7);
-  -webkit-box-shadow: 5px 5px rgba(0, 0, 0, 0.7);
-  box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.7);
-  transition: all linear 200ms; }
+  height: 0px; }
   card.animatedCardOpen:after {
     content: '';
     height: 15px;
@@ -10314,8 +10310,7 @@ card.animatedCard {
   left: 50%;
   transform: translate(-50%, 0%);
   width: 100%;
-  overflow: hidden;
-  transition: all linear 200ms; }
+  overflow: hidden; }
 
 .relative {
   position: relative; }

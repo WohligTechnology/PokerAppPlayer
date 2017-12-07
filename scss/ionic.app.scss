@@ -558,10 +558,6 @@ $dark:                            #444 !default;
             width: 200px;
             overflow: hidden;
             height: 0px;
-            -moz-box-shadow: 5px 5px rgba(0, 0, 0, 0.7);
-            -webkit-box-shadow: 5px 5px rgba(0, 0, 0, 0.7);
-            box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.7);
-            transition: all linear 200ms;
             &:after {
                 content: '';
                 height: 15px;
@@ -581,7 +577,6 @@ $dark:                            #444 !default;
             transform: translate(-50%, 0%);
             width: 100%;
             overflow: hidden;
-            transition: all linear 200ms;
         }
 
         .relative {
