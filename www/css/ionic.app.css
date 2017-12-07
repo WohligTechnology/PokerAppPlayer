@@ -10454,6 +10454,11 @@ pre {
     stroke-dasharray: 20, 0;
     stroke-dashoffset: 20; } }
 
+.stack-button-holder {
+  margin-top: -35px; }
+  .stack-button-holder button.button {
+    background: red; }
+
 @media screen and (max-device-width: 750px) and (orientation: landscape) {
   .player-not-active {
     font-size: 2em;
