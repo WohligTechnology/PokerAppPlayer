@@ -10450,9 +10450,12 @@ pre {
     stroke-dashoffset: 20; } }
 
 .stack-button-holder {
-  margin-top: -35px; }
+  margin-top: -17px; }
   .stack-button-holder button.button {
     background: red; }
+
+card[card=NONE] {
+  opacity: 0.5; }
 
 @media screen and (max-device-width: 750px) and (orientation: landscape) {
   .player-not-active {
