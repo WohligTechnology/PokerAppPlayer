@@ -10389,8 +10389,8 @@ pre {
 
 .all-in {
   background: linear-gradient(#ffe22d, #f40300);
-  font-size: 50px;
-  margin: 20px 0;
+  font-size: 40px;
+  margin: 20px 0 15px;
   letter-spacing: 7px;
   line-height: 1.2;
   width: 100%;
@@ -10399,11 +10399,13 @@ pre {
   padding: 0px 0 4px;
   font-weight: 600; }
   .all-in.Won {
+    font-size: 50px;
     padding: 40px;
     border-radius: 15px;
     line-height: 1.6;
     background: linear-gradient(#44ff2d, #093800); }
   .all-in.Lose {
+    font-size: 50px;
     padding: 40px;
     border-radius: 15px;
     line-height: 1.6;
@@ -10461,7 +10463,9 @@ pre {
     stroke-dashoffset: 20; } }
 
 .stack-button-holder {
-  margin-top: -17px; }
+  margin-top: -7px;
+  position: relative;
+  z-index: 5; }
   .stack-button-holder button.button {
     background: red; }
 
