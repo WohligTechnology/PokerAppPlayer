@@ -10376,6 +10376,7 @@ pre {
   bottom: 0;
   left: 0;
   right: 0;
+  z-index: 5;
   background: rgba(246, 246, 246, 0.85); }
   .player-not-active span {
     font-size: 5em;
@@ -10465,7 +10466,7 @@ pre {
 .stack-button-holder {
   margin-top: -7px;
   position: relative;
-  z-index: 5; }
+  z-index: 1; }
   .stack-button-holder button.button {
     background: red; }
 
