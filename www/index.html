@@ -33,8 +33,6 @@
       io.sails.url = adminUUU;
     } else {
       $.jStorage.set("adminurl", "http://127.0.0.1:1337");
-      console.log("Adminurl");
-      console.log(window.location.href.split("#")[0] + "#/tab");
       window.location.href = window.location.href.split("#")[0] + "#/tab";
     }
   </script>
