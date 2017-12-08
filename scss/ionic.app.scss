@@ -671,17 +671,22 @@ $dark:                            #444 !default;
             font-size: 50px;
             margin: 20px 0;
             letter-spacing: 7px;
-            line-height: 1.6;
+            line-height: 1.2;
             width: 100%;
             text-transform: uppercase;
             color: #fff;
+            padding: 0px 0 4px;
             font-weight: 600;
-            padding: 40px;
-            border-radius: 15px;
             &.Won {
+                padding: 40px;
+                border-radius: 15px;
+                line-height: 1.6;
                 background: linear-gradient(#44ff2d, #093800);
             }
             &.Lose {
+                padding: 40px;
+                border-radius: 15px;
+                line-height: 1.6;
                 background: linear-gradient(#ff2d2d, #8c0201);
             }
         }

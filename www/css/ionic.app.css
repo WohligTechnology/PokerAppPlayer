@@ -10392,16 +10392,21 @@ pre {
   font-size: 50px;
   margin: 20px 0;
   letter-spacing: 7px;
-  line-height: 1.6;
+  line-height: 1.2;
   width: 100%;
   text-transform: uppercase;
   color: #fff;
-  font-weight: 600;
-  padding: 40px;
-  border-radius: 15px; }
+  padding: 0px 0 4px;
+  font-weight: 600; }
   .all-in.Won {
+    padding: 40px;
+    border-radius: 15px;
+    line-height: 1.6;
     background: linear-gradient(#44ff2d, #093800); }
   .all-in.Lose {
+    padding: 40px;
+    border-radius: 15px;
+    line-height: 1.6;
     background: linear-gradient(#ff2d2d, #8c0201); }
 
 .active .modal-backdrop-bg {
