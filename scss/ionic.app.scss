@@ -668,7 +668,7 @@ $dark:                            #444 !default;
 
         .all-in {
             background: linear-gradient(#ffe22d, #f40300);
-            font-size: 35px;
+            font-size: 50px;
             margin: 20px 0;
             letter-spacing: 7px;
             line-height: 1.6;
@@ -676,6 +676,14 @@ $dark:                            #444 !default;
             text-transform: uppercase;
             color: #fff;
             font-weight: 600;
+            padding: 40px;
+            border-radius: 15px;
+            &.Won {
+                background: linear-gradient(#44ff2d, #093800);
+            }
+            &.Lose {
+                background: linear-gradient(#ff2d2d, #8c0201);
+            }
         }
 
         .active .modal-backdrop-bg {
