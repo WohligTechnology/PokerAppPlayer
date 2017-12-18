@@ -69,11 +69,11 @@ angular.module('starter.controllers', [])
       $scope.modal = modal;
     });
 
-    $scope.showWinner = function (data) {
+    $scope.showWinnerSocket = function (data) {
       if (!($scope.player.isFold || !$scope.player.isActive)) {
         $scope.modal.show();
         var isWinner = _.find(data.data, function (n) {
-          return n.playerNo == selectPlayer.getPlayer();
+          return (n.playerNo == selectPlayer.getPlayer()) && n.winner;
         });
         if (isWinner) {
           $scope.isWinner = "You Won";
@@ -90,7 +90,7 @@ angular.module('starter.controllers', [])
       $scope.modal.hide();
     };
 
-    io.socket.on("ShowWinner", $scope.showWinner);
+    io.socket.on("ShowWinner", $scope.showWinnerSocket);
 
   })
   .controller('TabCtrl', function ($scope, $stateParams, selectPlayer, apiService, $state) {
