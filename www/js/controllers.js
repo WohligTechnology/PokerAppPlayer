@@ -5,7 +5,7 @@ angular.module('starter.controllers', [])
 
   .controller('AppCtrl', function ($scope, $ionicModal, $timeout) {})
 
-  .controller('PlayerCtrl', function ($scope, $stateParams, selectPlayer, apiService, $interval, $state, $ionicModal) {
+  .controller('PlayerCtrl', function ($scope, $stateParams, selectPlayer, apiService, $interval, $state, $ionicModal, $timeout) {
 
     io.socket.off("Update", winnerCtrlSocket.update);
 
@@ -71,7 +71,9 @@ angular.module('starter.controllers', [])
 
     $scope.showWinnerSocket = function (data) {
       if (!($scope.player.isFold || !$scope.player.isActive)) {
-        $scope.modal.show();
+        if (!$scope.modal._isShown) {
+          $scope.modal.show();
+        }
         var isWinner = _.find(data.data, function (n) {
           return (n.playerNo == selectPlayer.getPlayer()) && n.winner;
         });
