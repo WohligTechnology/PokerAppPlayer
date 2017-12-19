@@ -14,6 +14,8 @@
                     <img src="img/title.png" alt="">
                     <span class="player-number">{{player.playerNo}}</span>
                     <span class="dealer" ng-if="player.isDealer">D</span>
+                    <div class="player-dealer player-blind small-blind" ng-if="player.isSmallBlind"> Sb </div>
+                    <div class="player-dealer player-blind " ng-if="player.isBigBlind"> Bb </div>
                 </h2>
             </div>
             <div class="row text-center mobile-cards" on-tap='youwin()'>

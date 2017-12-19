@@ -10274,6 +10274,38 @@ body {
     background: #c30101;
     border-radius: 50%;
     padding: 2px 8px; }
+  .winnersHead .player-dealer,
+  .winnersHead .player-raised {
+    position: absolute;
+    right: 6px;
+    border: 1px solid;
+    border-radius: 50%;
+    padding: 9px 9px;
+    color: #fff;
+    font-size: 2.2em; }
+    .winnersHead .player-dealer.checked,
+    .winnersHead .player-raised.checked {
+      background: #11c1f3;
+      border: 1px #11c1f3;
+      padding: 15px 8px; }
+    .winnersHead .player-dealer.called,
+    .winnersHead .player-raised.called {
+      background: #32245e;
+      border: 1px #32245e; }
+  .winnersHead .player-blind {
+    padding: 7px 5px;
+    position: absolute;
+    right: -80px;
+    top: 4px;
+    height: 40px;
+    width: 40px;
+    color: #fff;
+    font-size: 22px;
+    background: #009686;
+    border-color: #009686; }
+  .winnersHead .small-blind {
+    background: #673AB7;
+    border-color: #673AB7; }
 
 .item.item-input input.passwordtext {
   font-size: 20px;
@@ -10368,6 +10400,7 @@ pre {
   justify-content: center;
   display: flex;
   align-items: center;
+  min-height: 100vh;
   margin: 0 auto;
   flex: 1;
   color: #c30101;
