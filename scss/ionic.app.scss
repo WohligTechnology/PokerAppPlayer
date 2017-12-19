@@ -525,15 +525,6 @@ $dark:                            #444 !default;
                 right: 16px;
                 font-size: 38px;
             }
-            span.dealer {
-                position: absolute;
-                top: 12px;
-                right: -18px;
-                font-size: 24px;
-                background: #c30101;
-                border-radius: 50%;
-                padding: 2px 8px;
-            }
             .player-dealer,
             .player-raised {
                 position: absolute;
@@ -553,22 +544,24 @@ $dark:                            #444 !default;
                     border: 1px #32245e;
                 }
             }
-            .player-blind {
-                padding: 7px 5px;
-                position: absolute;
-                right: -80px;
-                top: 4px;
-                height: 40px;
-                width: 40px;
-                color: #fff;
-                font-size: 22px;
-                background: #009686;
-                border-color: #009686;
-            }
-            .small-blind {
-                background: #673AB7;
-                border-color: #673AB7;
-            }
+        }
+        
+        .player-blind,
+        .dealer {
+            padding: 20px;
+            position: absolute;
+            font-size: 22px;
+            top: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .player-blind {
+            right: 10px;
+        }
+        
+        .dealer {
+            right: 220px;
         }
         
         .item.item-input input.passwordtext {
@@ -838,12 +831,6 @@ $dark:                            #444 !default;
                 padding: 8px 0 0;
                 img {
                     width: 140px;
-                }
-                span.dealer {
-                    top: 3px;
-                    right: -14px;
-                    font-size: 16px;
-                    padding: 2px 6px;
                 }
                 span.player-number {
                     top: 10px;

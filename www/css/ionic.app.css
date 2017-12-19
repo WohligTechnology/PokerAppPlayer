@@ -10266,14 +10266,6 @@ body {
     top: 18px;
     right: 16px;
     font-size: 38px; }
-  .winnersHead span.dealer {
-    position: absolute;
-    top: 12px;
-    right: -18px;
-    font-size: 24px;
-    background: #c30101;
-    border-radius: 50%;
-    padding: 2px 8px; }
   .winnersHead .player-dealer,
   .winnersHead .player-raised {
     position: absolute;
@@ -10292,20 +10284,21 @@ body {
     .winnersHead .player-raised.called {
       background: #32245e;
       border: 1px #32245e; }
-  .winnersHead .player-blind {
-    padding: 7px 5px;
-    position: absolute;
-    right: -80px;
-    top: 4px;
-    height: 40px;
-    width: 40px;
-    color: #fff;
-    font-size: 22px;
-    background: #009686;
-    border-color: #009686; }
-  .winnersHead .small-blind {
-    background: #673AB7;
-    border-color: #673AB7; }
+
+.player-blind,
+.dealer {
+  padding: 20px;
+  position: absolute;
+  font-size: 22px;
+  top: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px; }
+
+.player-blind {
+  right: 10px; }
+
+.dealer {
+  right: 220px; }
 
 .item.item-input input.passwordtext {
   font-size: 20px;
@@ -10523,11 +10516,6 @@ card[card=NONE] {
     padding: 8px 0 0; }
     .winnersHead img {
       width: 140px; }
-    .winnersHead span.dealer {
-      top: 3px;
-      right: -14px;
-      font-size: 16px;
-      padding: 2px 6px; }
     .winnersHead span.player-number {
       top: 10px;
       right: 11px;
