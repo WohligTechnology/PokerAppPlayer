@@ -43,7 +43,80 @@ $dark:                            #444 !default;
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center right;
+            border: 12px solid transparent;
+            transition: (all ease 300ms);
+            &.animate-active {
+                -webkit-animation: animation-active-color 3s infinite;
+                /* Safari 4+ */
+                -moz-animation: animation-active-color 3s infinite;
+                /* Fx 5+ */
+                -o-animation: animation-active-color 3s infinite;
+                /* Opera 12+ */
+                animation: animation-active-color 3s infinite;
+                /* IE 10+, Fx 29+ */
+            }
         }
+        
+        @-webkit-keyframes animation-active-color {
+            0% {
+                border-color: red;
+            }
+            40% {
+                border-color: green;
+            }
+            80% {
+                border-color: yellow;
+            }
+            100% {
+                border-color: red;
+            }
+        }
+        
+        @-moz-keyframes animation-active-color {
+            0% {
+                border-color: red;
+            }
+            40% {
+                border-color: green;
+            }
+            80% {
+                border-color: yellow;
+            }
+            100% {
+                border-color: red;
+            }
+        }
+        
+        @-o-keyframes animation-active-color {
+            0% {
+                border-color: red;
+            }
+            40% {
+                border-color: green;
+            }
+            80% {
+                border-color: yellow;
+            }
+            100% {
+                border-color: red;
+            }
+        }
+        
+        @keyframes animation-active-color {
+            0% {
+                border-color: red;
+            }
+            40% {
+                border-color: green;
+            }
+            80% {
+                border-color: yellow;
+            }
+            100% {
+                border-color: red;
+            }
+        }
+        
         
         .mar5 {
             margin-top: 5%;
@@ -729,58 +802,6 @@ $dark:                            #444 !default;
         
         .modal {
             background-color: transparent;
-        }
-        
-        .is-Active {
-            color: #fff;
-            background: #33e966;
-            border-radius: 8px;
-            max-width: 170px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            font-size: 22px;
-            font-weight: 600;
-            padding: 15px;
-            margin: 0 auto;
-            animation-name: isactive;
-            animation-duration: 1.5s;
-            animation-timing-function: ease;
-            animation-iteration-count: infinite;
-        }
-        
-        #MyRect {
-            stroke: $balanced;
-            stroke-width: 6px;
-            fill: transparent;
-            height: 97.5vh;
-            width: 97%;
-            -moz-transition: all 1.2s linear;
-            -o-transition: all 1.2s linear;
-            -webkit-transition: all 1.2s linear;
-            transition: all 1.2s linear;
-            animation-name: isactive;
-            animation-duration: 1.2s;
-            animation-timing-function: ease;
-            animation-iteration-count: infinite;
-        }
-        
-        #made {
-            position: fixed;
-        }
-        
-        @keyframes isactive {
-            0% {
-                stroke-dasharray: 20, 150;
-                stroke-dashoffset: 20;
-            }
-            50% {
-                stroke-dasharray: 20, 250;
-                stroke-dashoffset: 20;
-            }
-            100% {
-                stroke-dasharray: 20, 0;
-                stroke-dashoffset: 20;
-            }
         }
         
         .stack-button-holder {

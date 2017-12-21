@@ -1,10 +1,5 @@
 <ion-view>
-    <ion-content class="bgImg" scroll="false">
-        <div ng-if="player.isTurn">
-            <svg width="100vw" height="100vh" id="made" xmlns="http://www.w3.org/2000/svg" version="1.1">
-                <rect x="10" height="180" y="10" width="180" id="MyRect" />
-            </svg>
-        </div>
+    <ion-content class="bgImg" scroll="false" ng-class="{'animate-active':player.isTurn}">
         <div class="player-all">
             <div class="logo-left pull-left">
                 <img src="img/logo.png" alt="" class="full-image">
