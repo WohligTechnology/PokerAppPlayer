@@ -9891,58 +9891,7 @@ body {
   height: auto;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center right;
-  border: 12px solid transparent;
-  transition: all ease 300ms; }
-  .bgImg.animate-active {
-    -webkit-animation: animation-active-color 3s infinite;
-    /* Safari 4+ */
-    -moz-animation: animation-active-color 3s infinite;
-    /* Fx 5+ */
-    -o-animation: animation-active-color 3s infinite;
-    /* Opera 12+ */
-    animation: animation-active-color 3s infinite;
-    /* IE 10+, Fx 29+ */ }
-
-@-webkit-keyframes animation-active-color {
-  0% {
-    border-color: red; }
-  40% {
-    border-color: green; }
-  80% {
-    border-color: yellow; }
-  100% {
-    border-color: red; } }
-
-@-moz-keyframes animation-active-color {
-  0% {
-    border-color: red; }
-  40% {
-    border-color: green; }
-  80% {
-    border-color: yellow; }
-  100% {
-    border-color: red; } }
-
-@-o-keyframes animation-active-color {
-  0% {
-    border-color: red; }
-  40% {
-    border-color: green; }
-  80% {
-    border-color: yellow; }
-  100% {
-    border-color: red; } }
-
-@keyframes animation-active-color {
-  0% {
-    border-color: red; }
-  40% {
-    border-color: green; }
-  80% {
-    border-color: yellow; }
-  100% {
-    border-color: red; } }
+  background-position: center right; }
 
 .mar5 {
   margin-top: 5%; }
@@ -10367,13 +10316,13 @@ card.animatedCardOpen {
   position: absolute;
   left: 50%;
   transform: translate(-50%, 0%);
-  width: 200px;
+  width: 230px;
   overflow: hidden;
   height: 0px; }
   card.animatedCardOpen:after {
     content: '';
     height: 15px;
-    width: 200px;
+    width: 230px;
     position: absolute;
     bottom: 0px;
     left: 50%;
@@ -10398,10 +10347,65 @@ pre {
 
 .player-all {
   height: 100vh;
-  position: relative; }
+  position: relative;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease; }
+
+.animate-active {
+  border: 10px solid red;
+  -webkit-animation: animation-active-color 3s infinite;
+  /* Safari 4+ */
+  -moz-animation: animation-active-color 3s infinite;
+  /* Fx 5+ */
+  -o-animation: animation-active-color 3s infinite;
+  /* Opera 12+ */
+  animation: animation-active-color 3s infinite;
+  /* IE 10+, Fx 29+ */ }
+
+@-webkit-keyframes animation-active-color {
+  0% {
+    border-color: red; }
+  40% {
+    border-color: green; }
+  80% {
+    border-color: yellow; }
+  100% {
+    border-color: red; } }
+
+@-moz-keyframes animation-active-color {
+  0% {
+    border-color: red; }
+  40% {
+    border-color: green; }
+  80% {
+    border-color: yellow; }
+  100% {
+    border-color: red; } }
+
+@-o-keyframes animation-active-color {
+  0% {
+    border-color: red; }
+  40% {
+    border-color: green; }
+  80% {
+    border-color: yellow; }
+  100% {
+    border-color: red; } }
+
+@keyframes animation-active-color {
+  0% {
+    border-color: red; }
+  40% {
+    border-color: green; }
+  80% {
+    border-color: yellow; }
+  100% {
+    border-color: red; } }
 
 .cards-two {
-  height: 300px; }
+  height: 330px; }
 
 .bottom-cards {
   width: 100%;
@@ -10437,7 +10441,7 @@ pre {
 
 .join-two .cards-two {
   float: left;
-  width: 200px;
+  width: 230px;
   margin-left: -60px; }
 
 .player-not-active {
@@ -10496,7 +10500,7 @@ pre {
   background-color: transparent; }
 
 .stack-button-holder {
-  margin-top: -7px;
+  margin-top: 10px;
   position: relative;
   z-index: 1; }
   .stack-button-holder button.button {
@@ -10547,7 +10551,7 @@ card[card=NONE] {
     font-weight: 100;
     padding: 15px 25px; }
   .cards-two {
-    zoom: 0.5; }
+    zoom: 0.4; }
   .winnersHead img {
     width: 140px; }
   .winnersHead span.player-number {

@@ -27,7 +27,7 @@
             <div class="all-in text-center" ng-if="!player.isActive">
                 Not Active
             </div>
-            <div class="row" ng-if="!(player.isFold || player.isAllIn)">
+            <!--<div class="row" ng-if="!(player.isFold || player.isAllIn)">
                 <div class="col-20 text-center">
                     <div class="padding-right">
                         <button class="button button-block" ng-disabled="!player.isTurn || remainingPlayer<=1" on-tap="allIn()">
@@ -43,12 +43,6 @@
                     </div>
                 </div>
                 <div class="col-20 text-center">
-                    <!-- <div class="padding-right">
-                        <button class="button button-block button-red" on-tap="toggleStack();">
-                            <span ng-if="!isStack.value">Stack</span>
-                            <span ng-if="isStack.value">Unstack</span>
-                        </button>
-                    </div> -->
                 </div>
                 <div class="col-20 text-center">
                     <div class="padding-right" ng-if="isCheck">
@@ -68,7 +62,7 @@
                             Fold</button>
                     </div>
                 </div>
-            </div>
+            </div>-->
             <div class="text-center marb20" ng-hide="player.isFold">
                 <player ng-player="player"></player>
             </div>

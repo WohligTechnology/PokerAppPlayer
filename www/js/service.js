@@ -162,7 +162,7 @@ myApp.directive('animatedCard', function ($ionicGesture, $timeout) {
         }
       };
       $scope.card = $attr.card;
-      var cardHeight = 300;
+      var cardHeight = 330;
       var topMargin = 0;
       var maxDragPercent = 60;
       $timeout(function () {
@@ -221,7 +221,7 @@ myApp.directive('animatedCardStack', function ($ionicGesture) {
     templateUrl: 'templates/directive/animatedCardStack.html',
     link: function ($scope, $element, attr) {
       $scope.card = attr.card;
-      var cardHeight = 300;
+      var cardHeight = 330;
       var topMargin = 0;
       var maxDragPercent = 60;
       $scope.player.dragCss = {
