@@ -605,6 +605,7 @@ $dark:                            #444 !default;
             transform: translate(-50%, 0%);
             width: 100%;
             overflow: hidden;
+            transition: (all ease 50ms);
         }
         
         .relative {
